@@ -1,0 +1,58 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+
+\newgeometry{vmargin={10mm,28mm}, hmargin={25mm,25mm}}
+
+% Definition of \maketitle
+\makeatletter
+\newcommand{\departmentname}[1]{\def\@departmentname{#1}}
+\newcommand{\coursename}[1]{\def\@coursename{#1}}
+\newcommand{\academicyear}[1]{\def\@academicyear{#1}}
+\newcommand{\advisorname}[1]{\def\@advisorname{#1}}
+\newcommand{\coadvisorname}[1]{\def\@coadvisorname{#1}}
+\newcommand{\studentname}[1]{\def\@studentname{#1}}
+\newcommand{\itathesistitle}[1]{\def\@itathesistitle{#1}}
+\newcommand{\engthesistitle}[1]{\def\@engthesistitle{#1}}
+
+\def\@maketitle{
+	\begin{center}
+		\includegraphics[width=4cm]{images/logoUnipr.png}\\[2ex]
+		\@departmentname\\[1ex]
+		\@coursename\\
+		\noindent\rule{8cm}{0.4pt}\\[1ex]
+		\@itathesistitle\\[1ex]
+		\@engthesistitle
+	\end{center}
+	\underline{Relatore:}
+	\hfill
+	\underline{Tesi di Laurea di:}\\
+	\@advisorname
+	\hfill
+	\@studentname\\[1ex]
+	\underline{Correlatore:}\\
+	\@coadvisorname
+	\begin{center}
+		\@academicyear
+	\end{center}
+	\vskip 0.1cm
+}
+\makeatother
+
+\departmentname{\textbf{Dipartimento di Ingegneria e Architettura}}
+\coursename{\textbf{Corso di Laurea Magistrale in Ingegneria Informatica}}
+\academicyear{ANNO ACCADEMICO 2017/2018}
+\advisorname{Chiar.mo Prof. Michele Amoretti}
+\coadvisorname{Dr. Nome Cognome}
+\studentname{Nome Cognome}
+\itathesistitle{TITOLO IT}
+\engthesistitle{TITOLO EN}
+
+\begin{document}
+	\maketitle
+   	%\lipsum
+	Bla bla.
+   	\end{document}

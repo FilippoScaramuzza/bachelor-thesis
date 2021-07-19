@@ -1,0 +1,226 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formattazione base del documento con supporto caratteri
+% accentati da tastiera win/linux e lingua italiana
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper,oneside,openright]{book}
+
+%modifico l'interlinea
+\linespread{1.3}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pacchetto per il controllo della sintassi
+% Decommentare \syntaxonly
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{syntonly}
+\usepackage{textcomp}
+%\usepackage{dsfont}
+% \syntaxonly
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inclusione pacchetto per la gestione delle figure che
+% andranno copiate nella cartella figure
+%
+% Esempio di uso: avendo un file di nome figura1.eps questa
+% si inserisce nella tesi con il comando:
+%
+% \begin{figure}[ht]
+% \begin{center}
+% \includegraphics{figura1.eps}
+% \caption[nome breve]{nome lungo}
+% \end{center}
+% \end{figure}
+%
+% Il nome breve è quello che apparirà nell'indice delle
+% figure ed è opzionale.
+% Il nome lungo è quello che appare sotto la figura.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[final]{graphicx}
+%\graphicspath{{./images/}}
+\DeclareGraphicsExtensions{.png,.pdf,.jpg}
+
+% evita il warning di pdllatex riguardo alle immagini pdf
+% con versione 1.5 (al massimo 1.4 era di default..)
+\pdfoptionpdfminorversion=5
+
+% small 
+\usepackage[font=small]{caption}
+
+%\usepackage{subfigure}
+%\usepackage{wrapfig}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inclusione pacchetto per la generazione automatica
+% dell'indice analitico.  Per esempio se vogliamo che la
+% parola "raggruppamenti" sia indicizzata nella frase
+% "I raggruppamenti sono realizzati per..." si dovrà
+% scrivere "i raggruppamenti\index{raggruppamenti} ..."
+%
+% Compilando il file, il LaTeX produrrà un file ausiliario
+% che termina con ".idx". Bisogna far processare questo
+% file idx dal programma ausiliario "bibtex", che produrrâ
+% a sua volta un altro file ancora. Dare infine un'ultima
+% passata col LaTeX. Si può tranquillamente lasciare la
+% compilazione dell'indice verso la fine della stesura del
+% lavoro, quando tutto è ormai quasi definitivo.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{makeidx}
+%\usepackage{tocbibind}
+%\makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Numerazione delle sessioni fino alle subsub e inclusione
+% nell'indice
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inclusione pacchetto per la gestione della impostazioni
+% personalizzate per la prima pagina
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{unipr}
+    \titolo{Titolo Italiano}
+    \titoloIng{English Title}
+    \laureando{Filippo Scaramuzza}
+    \annoaccademico{2020-2021}
+    \corsodilaurea{Ingegneria Informatica, Elettronica e delle Telecomunicazioni}
+    \relatore[Chiar.mo Prof.]{Michele Amoretti}
+    \correlatorea[Dott. Ing.]{Gabriele Penzotti}
+    \dedica{Ai miei genitori.}
+    %\citazione{\textit{\textquotedblleft Se ho visto più lontano, \`e perch\`e stavo sulle spalle di giganti.\textquotedblright \\ Isaac Newton}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% utilizzo il pacchetto fancyhdr per l'header e il footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+
+
+ % Package aggiunti
+  \usepackage{amssymb}				% matematica
+  \usepackage{amsmath}				% matematica
+  \usepackage{amsthm}				% matematica -> stile teoremi, def, proposizioni
+  \usepackage{amsbsy}				% for bold math symbol
+  \usepackage{cases}				% sistemi di equazioni con numerazione e sottonumerazione
+  \usepackage{booktabs}				% tabelle con toprule ecc
+  \usepackage{textcomp}				% per il simbolo di gradi
+  \usepackage{subfig}				% per mettere pi figure in una stessa
+  \usepackage[chapter]{algorithm}	% per mettere l'ambiente flottante attorno all'algoritmo (chapter \`e per la numerazione)
+  \usepackage{algorithmic}			% per creare algoritmi
+  \floatname{algorithm}{Algoritmo}					% opzioni dell'algoritmo: titolo in italiano
+  \renewcommand{\algorithmicrequire}{\textbf{Input:}}		% require->input
+  \renewcommand{\algorithmicensure}{\textbf{Output:}}	% ensure->output
+  %\setlength{\parindent}{0in}			% per togliere l'indentazione all'inizio di un nuovo paragrafo
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% utilizzo il pacchetto hyperref per i link nel pdf, oltretutto setto i colori dei link a nero
+% nota: funziona solo con pdfLatex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[pdftex,colorlinks,plainpages=false,hyperindex,bookmarksopen,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+% pacchetto per creare i link con pdfLatex
+%\usepackag{hyperref}
+%\hypersetup{colorlinks=true, linkcolor=black, urlcolor=black}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comandi aggiuntivi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\EQ}[1]{Eq.~(\ref{#1})}
+%\newcommand{\BEGMATRIX}[1]{\left[\begin{array}{#1}}
+%\newcommand{\ENDMATRIX}{\end{array}\right]}
+%\def\argmin{\mathop{\rm argmin}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Corpo della tesi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% PAGE HEADERS permette di creare gli header delle pagine con il numero, il capitolo e la riga sotto
+\pagestyle{fancy}
+\headheight 15pt
+\renewcommand{\chaptermark}[1]{\markboth{{\chaptername}\ \thechapter.\hspace{1em}#1}{}}
+\renewcommand{\footrulewidth}{0pt}
+% definisce l'header e il footer
+\lhead[\fancyplain{}{}]{\fancyplain{}{\leftmark}} \chead{}
+\rhead{\thepage} \lfoot{} \cfoot{} \rfoot{}
+
+% definizione dei teoremi, proposizioni, definizioni ecc usato con il package amsthm
+	\newtheorem{definizione}{Definizione}[chapter] 		% il chapter si usa per la sotto numerazione nei capitoli
+	\newtheorem{proposizione}{Proposizione}[chapter]
+	\newtheorem{problema}{Problema}[chapter]
+	\newtheorem{proprieta}{Propriet\`a}[chapter]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inizio della parte introduttiva
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle 
+
+
+\frontmatter
+\pagenumbering{alph}
+
+
+
+\input{ringraziamenti}
+
+\pagenumbering{roman}
+\tableofcontents
+%\listoffigures
+
+
+%\lstlistoflistings
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inizio della parte centrale
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \pagenumbering{arabic}
+\mainmatter
+
+\input{introduzione}
+
+ \clearpage
+         \input{statoarte}
+         
+         \input{architettura}
+         
+         \input{implementazione}
+
+         \input{risultati}
+
+ \clearpage
+
+          \input{conclusioni}
+
+\clearpage
+
+\appendix
+\renewcommand{\chaptermark}[1]{\markboth{{\appendixname}\ \thechapter.\hspace{1em}#1}{}}
+
+\input{appendice}
+
+\clearpage
+
+\addcontentsline{toc}{chapter}{Bibliografia}
+\bibliographystyle{unsrt}
+\nocite{*}
+\bibliography{riferimenti}
+% 
+\clearpage
+
+\end{document}
+
+

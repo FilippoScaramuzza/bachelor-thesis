@@ -1,0 +1,52 @@
+\chapter{Stato dell'arte}
+
+\section{Cloud Computing nell'era dei Big Data}
+
+Il \textit{Cloud Computing} è stato uno strumento fondamentale per l'espansione della portata, del calcolo, dell'archiviazione e dell'infrastruttura di rete delle applicazioni. Il NIST (\textit{National Institute of Standards and Technology}) definisce il \textit{Cloud Computing} come un modello che promuove l'accesso globale alle risorse informatiche condivise di rete, tipicamente \textit{on-demand} \cite{NISTCloudComputing}. L'infrastruttura, nella sua versione più semplice, in questo paradigma architetturale, è relegata principalmente in data center, ovvero dei raggruppamenti di risorse virtualizzate altamente accessibili che possono essere riconfigurate dinamicamente per garantire la scalabilità dei servizi. Questi fungono da server "centrali", che sono geograficamente situati in luoghi strategici garantendo agli utenti un'infrastruttura, una piattaforma oppure un servizio software utile per le loro applicazioni e i propri scopi (IaaS, Paas, SaaS).
+
+Nonostante il \textit{Cloud Computing} abbia indubbiamente avuto un ruolo chiave nel rendere accessibile una potenza di calcolo, altrimenti troppo difficile da poter essere realizzata in proprio, nella moderna era dei Big Data il tempo richiesto per accedere ad alcune applicazioni \textit{cloud-based}, che concentrano l'intera elaborazione dei dati nei suddetti \textit{data-center}, potrebbe essere troppo elevato e rendere questo paradigma impraticabile, ad esempio, per applicazioni nell'ambito dei \textit{mission-critial systems} od in generale ovunque la latenza debba essere ridotta al minimo. Inoltre l'ormai noto incremento dei dispositivi connessi in ambito IoT (\textit{Internet of Things} ed il relativo rapido aumento dei dati generati nell'\textit{edge} della rete richiedono che le risorse di calcolo siano geograficamente situate il più vicino possibile ai dispositivi stessi. Emerge quindi una maggiore domanda di potenza di calcolo che operi sui dati con un'ampia larghezza di banda, a bassa latenza e sensibile alla privacy, prerogativa di paradigmi di calcolo che sono per definizione geograficamente distribuiti e più vicini alle sorgenti dei dati.
+
+Per affrontare queste problematiche è quindi necessario garantire il cosiddetto \textit{Cloud-to-Thing Continuum} ed in questo ambito sono state avanzate numerose proposte, ad esempio il \textit{Fog Computing}, sia in ambito industriale che accademico \cite{OpenFogReferenceArchitecture, FogComputingInIoT}. 
+
+
+\section{Fog Computing ed altri paradigmi nel Cloud-to-Thing Continuum}
+
+\subsection{Fog Computing e architettura OpenFog}
+
+Con \textit{Fog Computing} si intende un'architettura orizzontale a livello di sistema che distribuisce le funzioni di elaborazione, archiviazione, controllo e rete più vicine agli utenti lungo un \textit{Cloud-to-Thing Continuum} \cite{OpenFogReferenceArchitecture}.
+
+Il \textit{Fog Computing} dunque non sostituisce bensì estende il modello tradizionale di \textit{Cloud Computing} offrendo le stesse possibilità (calcolo, archiviazione, funzionalità di rete) ma avvicinando la complessità in termini di risorse e servizi all'edge della rete, ovvero ai dispositivi che fungono da sorgente dei dati. 
+
+Ad esempio, in un'applicazione che si occupa di analisi di Big Data, lo strato di Fog (dall'inglese Fog, \textit{Nebbia}) che si pone ad un livello "più basso", ovvero più vicino ai dispositivi, rispetto al Cloud (dall'inglese Cloud, \textit{Nuvola}) potrebbe svolgere una funzione di filtraggio, pre-elaborazione e aggregazione del flusso dati, rendendo eventualmente disponibili alcuni risultati ai livelli inferiori e alleggerendo il carico nel Cloud a cui rimarrebbero i task più complessi ma su una mole di dati molto ridotta e pre-elaborata.
+
+\begin{figure}[!ht]
+  \includegraphics[width=12cm]{images/FogCloudToThingContinuum}
+  \centering
+  \caption{Architettura Fog Computing \cite{OpenFogReferenceArchitecture}}
+  \label{fig:temporizzazione_arbitraggio}
+\end{figure}
+
+
+L'architettura di riferimento per chi intende sviluppare applicazioni in ambito Fog Computing è stata fornita dall'\textit{OpenFog Consortium}. Quest'ultimo è stato fondato da ARM, Cisco, Dell, Intel, Microsoft e dall'Università di Princeton, nel 2015. I vantaggi fondamentali dell'architettura di riferimento definita dall'OpenFog Consortium sono riassunti con il termine \textit{SCALE} \cite{OpenFogReferenceArchitecture}, ovvero:
+
+\begin{itemize}
+	\item \textbf{Security}. Sicurezza aggiuntiva per garantire transazioni sicure e affidabili. Dal \textit{Security Pillar} dell'architettura di riferimento, si evince la necessità di un "nodo" fidato (\textit{Root of Trust}) quando si trattano dati sensibili.
+	\item \textbf{Cognition}. Viene applicato, tramite la consapevolezza degli obiettivi della singola applicazione un approccio "client-centrico", che garantisce una maggiore autonomia dal Cloud.
+	\item \textbf{Agility}. Rapida innovazione e scalabilità dei servizi a prezzi accessibili.
+	\item \textbf{Latency}. Elaborazione in tempo reale e latenze molto basse.
+	\item \textbf{Efficiency}. Riconoscimento e condivisione delle risorse inutilizzate dei dispositivi finali che partecipano al networking.
+\end{itemize}
+
+\subsection{Possibili applicazioni del Fog Computing}
+
+Le possibili applicazioni del Fog Computing sono innumerevoli, tra le più gettonate c'è sicuramente quanto concerne \textit{Smart Cars} e \textit{Traffic Control}. Gli obiettivi di questo scenario vengono raggiunti tramite l'implementazione di nodi Fog nei veicoli stessi garantendo una comunicazione con altri nodi Fog della rete se disponibili. I nodi nebbia di bordo forniscono servizi tra cui infotainment, sistemi avanzati di assistenza alla guida (ADAS), guida autonoma, prevenzione delle collisioni, navigazione, ecc. I nodi Fog che invece si occupano direttamente di controllo del traffico possono ricevere input da altre fonti, come sistemi di semafori intelligenti, gestori comunali e sistemi basati su Cloud. I flussi di dati tra il sistema di controllo del traffico, i nodi Fog dell'infrastruttura e i veicoli in tutte le direzioni, assicurano che tutti i livelli della gerarchia dispongano dei dati e delle capacità di controllo di cui hanno bisogno \cite{FogForTrafficControl}.
+
+Un altro interessante impiego del Fog Computing è nell'ambito delle \textit{Smart Cities} e degli \textit{Smart Buildings}. Infatti sebbene  la maggior parte delle città moderne disponga di una o più reti cellulari che forniscono una copertura dell'intera città, queste reti hanno spesso limiti di capacità e larghezza di banda che soddisfano appena le esigenze degli attuali abbonati. Ciò lascia poca larghezza di banda per i servizi più avanzati previsti in una città intelligente nell'era dei Big Data. L'implementazione di una rete Fog stabile e scalabile abbinata alle tecnologie 5G possono offrire un'opportunità per affrontare questo problema. I nodi Fog possono infatti fornire elaborazione e archiviazione locali e ottimizzare l'utilizzo della rete, analizzando dati prodotti dai sensori sugli edifici, nelle strade, nei corsi d'acqua e così via. Questo caso d'uso è già realtà, ad esmepio, nella città di Barcellona, dove i risultati hanno dimostrato che il Fog Computing è la possibile chiave di volta per l'implementazione di servizi molto avanzati e complessi, in città che producono decine di milioni di Gigabyte di dati giornalmente \cite{FogBarcellona}. 
+
+\subsection{Altri Paradigmi}
+
+Edge Computing, Mobile Computing, Fog RAN e differenze fondamentali con Fog e Cloud Computing.
+
+\section{Problemi aperti}
+
+Problemi aperti e sfide in campo Fog Computing: cosa si può fare e quali realtà sono realizzabili con questo paradigma. (Smart cars e traffic control, smart cities e smart buildings, ecc.)

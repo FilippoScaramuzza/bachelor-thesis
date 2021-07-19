@@ -1,0 +1,159 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{unipr}[2011/06/15  Redefines maketitle for University of Parma Thesis and changes oddsidemargin and evensidemargins for easier thesis binding; needs graphics file logoUnipr.png, powered by Fabio Ghilardelli]
+\RequirePackage{ifthen}
+\RequirePackage{graphicx}
+
+\newcommand{\@facolta}{Dipartimento di Ingegneria e Architettura}
+\newcommand{\@corsodilaurea}{?}
+\newcommand{\@titolo}{Senza Titolo}
+\newcommand{\@titoloIng}{Without Title}
+\newcommand{\@annoaccademico}{?}
+\newcommand{\@relatore}{?}
+\newcommand{\@correlatore}{?}
+\newcommand{\@correlatorea}{?}
+\newcommand{\@correlatoreb}{?}
+\newcommand{\@laureando}{?}
+\newcommand{\@laureanda}{?}
+\newcommand{\@dedica}{?}
+\newcommand{\@citazione}{?}
+
+\newcommand{\facolta}[1]{%
+  \renewcommand{\@facolta}{#1}}
+\newcommand{\corsodilaurea}[1]{%
+  \renewcommand{\@corsodilaurea}{#1}}
+\newcommand{\titolo}[1]{%
+  \renewcommand{\@titolo}{#1}}
+  \newcommand{\titoloIng}[1]{%
+  \renewcommand{\@titoloIng}{#1}}
+\newcommand{\annoaccademico}[1]{%
+  \renewcommand{\@annoaccademico}{#1}}
+\newcommand{\relatore}[2][Chiar.mo Prof.]{%
+  \renewcommand{\@relatore}{#1 #2}}
+%\newcommand{\correlatore}[2][Chiar.mo Prof.]{%
+   % \renewcommand{\@correlatore}{#1 \uppercase{#2}}}
+\newcommand{\correlatorea}[2][Ing.]{%
+  \renewcommand{\@correlatorea}{#1 #2}}
+\newcommand{\correlatoreb}[2][Ing.]{%
+  \renewcommand{\@correlatoreb}{#1 #2}}
+\newcommand{\laureando}[1]{%
+  \renewcommand{\@laureando}{#1}}
+\newcommand{\laureanda}[1]{%
+  \renewcommand{\@laureanda}{#1}}
+\newcommand{\dedica}[1]{%
+  \renewcommand{\@dedica}{#1}}
+\newcommand{\citazione}[1]{%
+  \renewcommand{\@citazione}{#1}}
+
+
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}%
+  \cleardoublepage}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formattazione del frontespizio
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\renewcommand\maketitle{\begin{titlepage}
+  \begin{sffamily}
+    % Immagine di sfondo
+    %\begin{center}
+    %  \vbox to0pt{%
+    %	\vbox to\textheight{\bigskip\bigskip\bigskip\bigskip\bigskip\bigskip\bigskip
+    %	  \includegraphics[scale=0.15]{images/logoUnipr}
+    %	  \vfil}
+    %	\vss}
+    %\end{center}
+    \begin{center}
+      \begin{Large}
+	%\vskip -2cm
+	% Logo unipr
+	\includegraphics[width=0.4\textwidth]{images/logoUnipr}
+	%\uppercase{Universit\`a degli Studi di Parma}
+      \end{Large}\\
+      \rule{9cm}{.4pt}\\
+      \smallskip
+      \begin{large}
+  \uppercase{\@facolta}\\
+  Corso di Laurea in \@corsodilaurea\\
+  \bigskip
+\vfill
+  {\setlength{\baselineskip}{1.5\baselineskip}
+  \vfil
+    \begin{Huge}
+      \@titolo
+    \end{Huge}\\
+  }
+  \vskip 0.8cm
+  {\setlength{\baselineskip}{1.5\baselineskip}
+  \vfil
+    \begin{Large}
+      \@titoloIng
+    \end{Large}\\
+  }
+%
+%
+    \begin{normalsize}
+    \vfill
+	\vskip 0.5cm
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        Relatore:&\\
+        \@relatore&\\
+        \ifthenelse{\equal{\@correlatorea}{?}}{}%
+        {\\ Correlatore:&\\ \@correlatorea&}\\
+        \ifthenelse{\equal{\@correlatoreb}{?}}{}%
+        {\@correlatoreb&}\\
+        \\
+        &Tesi di Laurea di:\\
+        &\@laureando \\
+    \end{tabular*}\\
+    \end{normalsize}
+    \vskip 1cm
+%
+%
+  \rule{9cm}{.4pt}\\
+  \medskip
+  \uppercase{Anno Accademico \@annoaccademico}\\
+  \end{large}
+  \end{center}
+  \vskip -3cm
+\end{sffamily}
+
+%pagina della dedica
+\clearemptydoublepage
+\ifthenelse{\equal{\@dedica}{?}}{}{%
+\pagestyle{empty}
+  \null\vfil
+  \begin{normalsize}
+  \begin{flushright}
+    \@dedica
+  \end{flushright}
+  \end{normalsize}
+}
+  
+  %pagina della citazione
+%\clearemptydoublepage
+\ifthenelse{\equal{\@citazione}{?}}{}{%
+\pagestyle{empty}
+  \null\vfil\vfil\vfil\vfil\vfil
+  \begin{normalsize}
+  \begin{flushright}
+    \@citazione
+  \end{flushright}
+  \end{normalsize}
+  \vfil\vfil\clearemptydoublepage}
+  
+\end{titlepage}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modifica dei margini ai fini della rilegatura
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifthenelse{\boolean{@twoside}}%
+  {\setlength{\oddsidemargin}{0.60in}%
+   \setlength{\evensidemargin}{-0.15in}}%
+  {\setlength{\oddsidemargin}{0.60in}%
+  \setlength{\evensidemargin}{0.60in}}
+
+\endinput

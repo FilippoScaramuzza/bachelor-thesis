@@ -1,0 +1,30 @@
+\begin{thebibliography}{1}
+
+\bibitem{NISTCloudComputing}
+P.~Mell and T.~Grance.
+\newblock The nist definition of cloud computing.
+\newblock {\em NIST Special Pubblication 800-145}, 2011.
+
+\bibitem{OpenFogReferenceArchitecture}
+OpenFog Consortium.
+\newblock {\em OpenFog Reference Architecture for Fog Computing}, 2017.
+
+\bibitem{FogComputingInIoT}
+F.~Bonomi, R.~Milito, J.~Zhu, and S.~Addepalli.
+\newblock Fog computing and its role in the internet of things.
+\newblock In {\em Proceedings of the first edition of the MCC workshop on
+  Mobile cloud computing}, 2012.
+
+\bibitem{FogForTrafficControl}
+Q.~Wu, J.~Shen, B.~Yong, J~Wu, F.~Li, J.~Wang, and Q.~Zhou.
+\newblock Smart fog based workflow for traffic control networks.
+\newblock {\em Future Generation Computer Systems}, 2019.
+
+\bibitem{FogBarcellona}
+J.~Garcia, E.~Simó, X.~Masip-Bruin, E.~Marín-Tordera, and S.~Sànchez-López.
+\newblock Do we really need cloud? estimating the fog computing capacities in
+  the city of barcelona.
+\newblock In {\em 2018 IEEE/ACM International Conference on Utility and Cloud
+  Computing Companion (UCC Companion)}, 2018.
+
+\end{thebibliography}
