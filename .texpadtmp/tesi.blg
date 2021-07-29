@@ -3,44 +3,49 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: /Users/filippo/Università/Tesi/.texpadtmp/tesi.aux
 The style file: unsrt.bst
 Database file #1: ../riferimenti.bib
-You've used 5 entries,
+Warning--empty booktitle in NetworkX
+Warning--empty chapter and pages in microservices
+Warning--empty publisher in microservices
+Warning--empty year in NISTMobileCloudComputing
+You've used 20 entries,
             1791 wiz_defined-function locations,
-            492 strings with 4998 characters,
-and the built_in function-call counts, 891 in all, are:
-= -- 56
-> -- 63
+            570 strings with 8146 characters,
+and the built_in function-call counts, 3654 in all, are:
+= -- 236
+> -- 265
 < -- 0
-+ -- 23
-- -- 18
-* -- 50
-:= -- 158
-add.period$ -- 14
-call.type$ -- 5
-change.case$ -- 4
++ -- 96
+- -- 76
+* -- 207
+:= -- 650
+add.period$ -- 60
+call.type$ -- 20
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 46
-empty$ -- 92
-format.name$ -- 18
-if$ -- 193
+cite$ -- 24
+duplicate$ -- 188
+empty$ -- 363
+format.name$ -- 76
+if$ -- 789
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 4
-newline$ -- 27
-num.names$ -- 4
-pop$ -- 23
+int.to.str$ -- 20
+missing$ -- 20
+newline$ -- 103
+num.names$ -- 19
+pop$ -- 91
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 15
+skip$ -- 60
 stack$ -- 0
 substring$ -- 0
-swap$ -- 7
+swap$ -- 26
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 4
-width$ -- 6
-write$ -- 50
+warning$ -- 4
+while$ -- 19
+width$ -- 22
+write$ -- 201
+(There were 4 warnings)
