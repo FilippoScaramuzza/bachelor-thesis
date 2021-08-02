@@ -15,9 +15,9 @@ YAFS è definito principalmente da sei classi: \textit{Core}, \textit{Topology},
 
 \subsection{Topologia e modellazione delle entità}
 
-Le entità della topologia sono modellate come un insieme di \textit{nodi} (ovvero i dispositivi della rete, come dispositivi IoT, nodi fog, server e cloudlet) interconnessi da \textit{archi} (i collegamenti di rete). L'implementazione della topologia, tramite un \textit{grafo}, permette l'applicabilità della \textit{Complex Network Theory} tramite l'integrazione di \textit{NetworkX}  \cite{NetworkX}. NetworkX è una nota libreria, scritta in Python, che fornisce diversi algoritmi per eseguire misure e analisi sui grafi, come degree, centrality, clustering, assortativity, communities e così via. Inoltre NetworkX accetta la definizione dei grafi tramite JSON, linguaggio utilizzato per diversi aspetti per la definizione dello scenario da simulare com YAFS, e permette l'esportazione dei grafi in formato GEXF, utile ad esempio per l'analisi dei grafi tramite il software \textit{Gephi} \footnote{Disponibile su: \url{https://gephi.org/}}.
+Le entità della topologia sono modellate come un insieme di \textit{nodi} (ovvero i dispositivi della rete, come dispositivi IoT, nodi fog, server e cloudlet) interconnessi da \textit{archi} (i collegamenti di rete). L'implementazione della topologia, tramite un \textit{grafo}, permette l'applicabilità della \textit{Complex Network Theory} grazie all'integrazione di \textit{NetworkX}  \cite{NetworkX}. NetworkX è una nota libreria, scritta in Python, che fornisce diversi algoritmi per eseguire misure e analisi sui grafi, come degree, centrality, clustering, assortativity, communities e così via. Inoltre NetworkX accetta la definizione dei grafi tramite JSON, linguaggio ampiamente utilizzato per la creazione dello scenario da simulare con YAFS, e permette l'esportazione dei grafi in formato GEXF, utile ad esempio per l'analisi dei grafi tramite il software \textit{Gephi} \footnote{Disponibile su: \url{https://gephi.org/}}.
 
-Gli attributi obbligatori per la definizione di un nodo sono un'identificativo univoco (\textit{ID}), il numero di istruzioni eseguite dal nodo in un'unità di tempo (\textit{IPT}) e la capacità della memoria (\textit{RAM}). L'utente è libero di aggiungere attributi personalizzati, utili allo scenario specifico che si vuole studiare (come è stato fatto nel corrente lavoro di Tesi. Maggiori informazioni sono al capitolo \ref{chapter:implementazione}). Un esempio di definizione dei nodi è mostrato nel Listing \ref{lst:node-definition}. 
+Gli attributi obbligatori per la definizione di un nodo sono un identificativo univoco (\textit{ID}), il numero di istruzioni eseguite dal nodo in un'unità di tempo (\textit{IPT}) e la capacità della memoria (\textit{RAM}). L'utente è libero di aggiungere attributi personalizzati, utili allo scenario specifico che si vuole studiare (come è stato fatto nel corrente lavoro di Tesi. Maggiori informazioni sono al capitolo \ref{chapter:implementazione}). Un esempio di definizione dei nodi è mostrato nel Listing \ref{lst:node-definition}. 
 \begin{lstlisting}[language=json, caption={Definizione di due nodi Fog utilizzando la rappresentazione JSON \cite{YAFSSimulator}}, captionpos=b, label={lst:node-definition}]
 {
 	"id": 120, "RAM": 1, "IPT": 530,
@@ -45,10 +45,51 @@ In YAFS le applicazioni (dei raggruppamenti di servizi), sono strutturate come d
   \label{fig:applications_ddf}
 \end{figure}
 
-La definizione delle applicazioni è composta da quattro parti: \textit{moduli} (o \textit{servizi}), \textit{messaggi}, \textit{trasmissioni} e dati generali. I \textit{moduli} possono avere diversi attributi, anche a seconda dello specifico scenario, ma quelli obbligatori sono solo un identificativo univoco (\textit{ID}) e il nome (\textit{name}). I \textit{messaggi}, ovvero i dati scambiati, hanno principalmente due attributi obbligatori: il numero di istruzioni (\textit{instructions}) e la grandezza in byte (\textit{bytes}). Le \textit{trasmissioni} definiscono le modalità in cui i servizi scambiano le informazioni. Gli attributi obbligatori sono in questo caso: il modulo di appartenenza (\textit{module}) e il messaggio in ingresso. Tramite la definizione delle trasmissioni è possibile, tramite un particolare attributo detto \textit{fractional}, definire la probabilità di propagare un determinato messaggio \textit{message\_out} sulla ricezione di un particolare messaggio \textit{message\_in}. 
+La definizione delle applicazioni è composta da quattro parti: \textit{moduli} (o \textit{servizi}), \textit{messaggi}, \textit{trasmissioni} e dati generali. I \textit{moduli} possono avere diversi attributi, anche a seconda dello specifico scenario, ma quelli obbligatori sono solo un identificativo univoco (\textit{ID}) e il nome (\textit{name}). I \textit{messaggi}, ovvero i dati scambiati, hanno principalmente due attributi obbligatori: il numero di istruzioni (\textit{instructions}) e la grandezza in byte (\textit{bytes}). Le \textit{trasmissioni} definiscono le modalità in cui i servizi scambiano le informazioni e si inviano dati. Gli attributi obbligatori sono in questo caso: il modulo di afferenza (\textit{module}) e il messaggio in ingresso. Tramite la definizione delle trasmissioni è possibile, con un particolare attributo detto \textit{fractional}, definire la probabilità di propagare un determinato messaggio \textit{message\_out} sulla ricezione di un particolare messaggio \textit{message\_in}. 
 
-In Figura \ref{fig:applications_ddf} sono mostrate tre tipologie di applicazioni che sono realizzabili. La prima, \texttt{Application 1}, è strutturata gerarchicamente, con la ricezione dei messaggi $M_{ij}$ che scatena l'invio di altri messaggi. Nella seconda applicazione, \texttt{Application 2}, è possibile osservare un'interazione di un servizio con se stesso. Infine nell'ultima applicazione, \texttt{Application 3}, è mostrato il \textit{broadcasting} di un messaggio $M_{B1}$ che raggiunge tutti i moduli dell'applicazione. In tutte e tre le applicazioni $WL_i$ indica il nodo che genera il carico di lavoro (ad esempio un dispositivo IoT).
+In Figura \ref{fig:applications_ddf} sono mostrate tre tipologie di applicazioni che sono realizzabili. La prima, \texttt{Application 1}, è strutturata gerarchicamente, con la ricezione dei messaggi $M_{ij}$ che scatena l'invio di altri messaggi. Nella seconda applicazione, \texttt{Application 2}, è possibile osservare un'interazione di un servizio con se stesso ed infine nell'ultima applicazione, \texttt{Application 3}, è mostrato il \textit{broadcasting} di un messaggio $M_{B1}$ che raggiunge tutti i moduli dell'applicazione. In tutte e tre le applicazioni $WL_i$ indica il nodo che genera il carico di lavoro (ad esempio un dispositivo IoT).
 
+\subsection{Politiche dinamiche}
+Le classi \textit{Selection}, \textit{Placement} e \textit{Population} sono utili per la generazione dinamica degli eventi dello scenario. In particolare la prima definisce quali nodi devono eseguire un particolare servizio, di conseguenza indirizza il \textit{workload}. La classe \textit{Placement} sceglie i servizi che devono essere allocati nei vari nodi, mentre la class \textit{Population} posiziona i generatori del workload nei nodi della rete. Queste tre classi possiedono principalmente due interfacce: una contenente l'\textit{initialization function} (che prepara l'allocazione dei moduli e del workload nei nodi della rete) e una contenente una funzione che viene invocata secondo una specifica distribuzione temporale.
+
+\begin{lstlisting}[language=python, caption={Definizione di due Population policies: una statica (\textit{popA}) ed una dinamica (\textit{popB}) \cite{YAFSSimulator}}, captionpos=b, label={lst:population-policy}]
+delayActivation = deterministicDistributionStartPoint(300, 300, name='Deterministic')
+periodActivation = deterministicDistribution(name='Deterministic', time=100)
+
+popA = Statical(name='StaticalPop')
+popA.set_sink_control({'id': a_id_fog_device, 'number': 2, 'module': appA.get_sink_modules()})
+popA.set_src_control({'number': 1, 'message': appA.get_message('M.Action'), 'distribution': periodicActivation})
+
+top20Devices = [''array_ids_fog_devices'']
+popB = Evolution(top20Devices, name='DynamicPop', activation_dist = delayActivation)
+popB.set_sink_control({'model': 'actuator-device', 'number': 2, 'module': appB.get_sink_control()})
+popB.set_src_control({'number': 1, 'message': appB.get_message('M.action'), 'distribution': periodicActivation})
+
+\end{lstlisting}
+
+Nel Listing \ref{lst:population-policy} è mostrato un esempio di definizione di politiche di \textit{Population}, una statica ed una dinamica. Nelle righe 1 e 2 vengono definite due distribuzioni temporali: la prima che inizia a 3000 unità temporali e da quel punto in poi invoca un'attivazione ogni 300 unità temporali, la seconda invece che invoca un'attivazione ogni 10 unità temporali. Alla riga 4 viene generata un'istanza di una classe Population predefinita. Le applicazioni YAFS hanno due tipi di moduli: \textit{workload sources} e \textit{workload sinks} (rispettivamente "sensori" ed "attuatori"). Le righe 5 e 6, tramite JSON, definiscono l'allocazione dei moduli sink e dei moduli source con una specifica distribuzione e il tipo di messaggio che questi devono trattare.
+
+Nel caso della seconda politica di \textit{Population}, viene utilizzato un modello più complesso (righe 8-11). Alla riga 9 viene infatti istanziato un oggetto Evolution (Listing \ref{population-evolution}). Questo segue la distribuzione di riga 1, dunque, il processo DES creato, inizia a produrre messaggi dopo un certo intervallo di tempo secondo una specifica scadenza. Ad ogni attivazione questo genera workload con le caratteristiche definite alla riga 11.
+
+\begin{lstlisting}[language=python, caption={Struttura di una classe Population \cite{YAFSSimulator}}, captionpos=b, label={lst:population-evolution}]
+
+class Evolution(population):
+	def __init__(self, listIDEntities, **kwargs):
+		# initialization of internal variables
+		super(Evolutionm self).__init__(**kwargs)
+	
+	def initial_allocation(self, sim, app_name):
+		# dealing assignments
+		sim.deploy_sink(app_name, node=fog_device, module=module)
+	
+	def run(self, sim):
+		# dealing assignements: msg, distribution and app_name
+		id = ... # listIDEntities.next
+		idsrc = sim.deploy_source(app_name, id_node=id, msg=..., distribution=...)
+
+\end{lstlisting}
+
+Nel Listing \ref{lst:population-evolution} è mostrata una versione semplificata della classe Evolution. In questo tipo di classi è sempre presente una funzione obbligatoria chiamata \texttt{initial\_allocation} e, facoltativamente, una funzione chiamata \texttt{run} che viene chiamata secondo l'eventuale distribuzione temporale specificata.
 
 \section{Descrizione dello scenario simulato}
 
