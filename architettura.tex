@@ -2,9 +2,9 @@
 
 \section{Struttura e funzionamento di YAFS}
 
-Per le simulazioni realizzate nel corrente lavoro di Tesi è stato fatto uso del simulatore \textit{YAFS} \footnote{Disponibile su: \url{https://github.com/acsicuib/YAFS}} (\textit{Yet Another Fog Simulator}) \cite{YAFSSimulator}. Quest'ultimo utilizza una libreria per la generazione e la gestione degli eventi chiamata \textit{SimPy} \footnote{Disponibile su: \url{https://simpy.readthedocs.io}}. Simpy è un'implementazione di un simulatore ad eventi discreti (DES, \textit{Discrete Event Simulator}), che garantisce un'interfaccia per la definizione dei processi (i componenti attivi della simulazione) e delle risorse (ad esempio i nodi ed i collegamenti della rete).
+Per le simulazioni realizzate nel corrente lavoro di Tesi è stato fatto uso del simulatore \textit{YAFS} \footnote{Disponibile su: \url{https://github.com/acsicuib/YAFS}} (\textit{Yet Another Fog Simulator}) \cite{YAFSSimulator}. Quest'ultimo utilizza una libreria per la generazione e la gestione degli eventi chiamata \textit{SimPy} \footnote{Disponibile su: \url{https://simpy.readthedocs.io}}, ovvero un'implementazione di un simulatore ad eventi discreti (DES, \textit{Discrete Event Simulator}), che garantisce un'interfaccia per la definizione dei processi (i componenti attivi della simulazione) e delle risorse (ad esempio i nodi ed i collegamenti della rete).
 
-YAFS è definito principalmente da sei classi: \textit{Core}, \textit{Topology}, \textit{Selection}, \textit{Placement}, \textit{Population} e \textit{Application}. Le relazioni che intercorrono tra loro sono mostrate in Figura \ref{fig:YAFS_classes}.
+YAFS è definito principalmente da sei classi: \textit{Core}, \textit{Topology}, \textit{Selection}, \textit{Placement}, \textit{Population} e \textit{Application}. Le relazioni che intercorrono tra loro sono mostrate in Figura \ref{fig:YAFS_classes} ed esposte nel seguito.
 
 \begin{figure}[!ht]
   \includegraphics[width=12cm]{images/YAFS_classes}
@@ -15,7 +15,7 @@ YAFS è definito principalmente da sei classi: \textit{Core}, \textit{Topology},
 
 \subsection{Topologia e modellazione delle entità}
 
-Le entità della topologia sono modellate come un insieme di \textit{nodi} (ovvero i dispositivi della rete, come dispositivi IoT, nodi fog, server e cloudlet) interconnessi da \textit{archi} (i collegamenti di rete). L'implementazione della topologia, tramite un \textit{grafo}, permette l'applicabilità della \textit{Complex Network Theory} grazie all'integrazione di \textit{NetworkX}  \cite{NetworkX}. NetworkX è una nota libreria, scritta in Python, che fornisce diversi algoritmi per eseguire misure e analisi sui grafi, come degree, centrality, clustering, assortativity, communities e così via. Inoltre NetworkX accetta la definizione dei grafi tramite JSON, linguaggio ampiamente utilizzato per la creazione dello scenario da simulare con YAFS, e permette l'esportazione dei grafi in formato GEXF, utile ad esempio per l'analisi dei grafi tramite il software \textit{Gephi} \footnote{Disponibile su: \url{https://gephi.org/}}.
+Le entità della topologia sono modellate come un insieme di \textit{nodi} (ovvero i dispositivi della rete, come dispositivi IoT, nodi fog, server e cloudlet) interconnessi da \textit{archi} (i collegamenti di rete). L'implementazione della topologia, tramite un \textit{grafo}, permette l'applicabilità della \textit{Complex Network Theory} grazie all'integrazione di \textit{NetworkX}  \cite{NetworkX}, una nota libreria, scritta in Python, che fornisce diversi algoritmi per eseguire misure e analisi sui grafi, come degree, centrality, clustering, assortativity, communities e così via. NetworkX accetta inoltre la definizione dei grafi tramite JSON, linguaggio ampiamente utilizzato per la creazione dello scenario con YAFS e permette l'esportazione dei grafi in formato GEXF, utile ad esempio per l'analisi dei grafi tramite il software \textit{Gephi} \footnote{Disponibile su: \url{https://gephi.org/}}.
 
 Gli attributi obbligatori per la definizione di un nodo sono un identificativo univoco (\textit{ID}), il numero di istruzioni eseguite dal nodo in un'unità di tempo (\textit{IPT}) e la capacità della memoria (\textit{RAM}). L'utente è libero di aggiungere attributi personalizzati, utili allo scenario specifico che si vuole studiare (come è stato fatto nel corrente lavoro di Tesi. Maggiori informazioni sono al capitolo \ref{chapter:implementazione}). Un esempio di definizione dei nodi è mostrato nel Listing \ref{lst:node-definition}. 
 \begin{lstlisting}[language=json, caption={Definizione di due nodi Fog utilizzando la rappresentazione JSON \cite{YAFSSimulator}}, captionpos=b, label={lst:node-definition}]
@@ -33,10 +33,11 @@ Gli attributi obbligatori per la definizione di un nodo sono un identificativo u
 }
 \end{lstlisting}
 
-La definizione dei collegamenti è molto simile. Questi hanno due attributi obbligatori: la larghezza di banda (\textit{BW}) e la velocità di propagazione (\textit{PR}). 
+La definizione dei collegamenti è molto simile. Questi hanno i seguenti attributi obbligatori: la larghezza di banda (\textit{BW}), la velocità di propagazione (\textit{PR}), l'ID del nodo sorgente (\textit{s}) e l'ID del nodo di destinazione (\textit{d}). I valori \textit{BW} e \textit{BR} sono utili al calcolo della latenza secondo la formula:
+$$\frac{Message.size.bytes}{BW} + PR$$
 
 \subsection{Modellazione delle Applicazioni}
-In YAFS le applicazioni (dei raggruppamenti di servizi), sono strutturate come dei \textit{Distributed Data Flow} (DDF) \cite{DDF_IOT_App}. In particolare un'applicazione è definita da un insieme di moduli che si scambiano dei messaggi. Infatti, un DDF è rappresentato da un \textit{grafo diretto aciclico}, dove i nodi sono i moduli che eseguono delle azioni sui messaggi in ingresso, questi ultimi muovendosi sugli archi del grafo. Questa rappresentazione è utile al fine di garantire il partizionamento delle applicazioni e la scalabilità, ad esempio tramite l'implementazione di micro-servizi \cite{microservices}. 
+In YAFS le applicazioni (ovvero dei raggruppamenti di servizi), sono strutturate come dei \textit{Distributed Data Flow} (DDF) \cite{DDF_IOT_App}. In particolare un'applicazione è definita da un insieme di moduli che si scambiano dei messaggi. Infatti, un DDF è rappresentato da un \textit{grafo diretto aciclico}, dove i nodi sono i moduli che eseguono delle azioni sui messaggi in ingresso, provenienti da un certo percorso sugli archi del grafo. Questa rappresentazione è utile al fine di garantire il partizionamento delle applicazioni e la scalabilità, ad esempio tramite l'implementazione di micro-servizi \cite{microservices}. 
 
 \begin{figure}[!ht]
   \includegraphics[width=14cm]{images/applications_ddf}
@@ -45,7 +46,7 @@ In YAFS le applicazioni (dei raggruppamenti di servizi), sono strutturate come d
   \label{fig:applications_ddf}
 \end{figure}
 
-La definizione delle applicazioni è composta da quattro parti: \textit{moduli} (o \textit{servizi}), \textit{messaggi}, \textit{trasmissioni} e dati generali. I \textit{moduli} possono avere diversi attributi, anche a seconda dello specifico scenario, ma quelli obbligatori sono solo un identificativo univoco (\textit{ID}) e il nome (\textit{name}). I \textit{messaggi}, ovvero i dati scambiati, hanno principalmente due attributi obbligatori: il numero di istruzioni (\textit{instructions}) e la grandezza in byte (\textit{bytes}). Le \textit{trasmissioni} definiscono le modalità in cui i servizi scambiano le informazioni e si inviano dati. Gli attributi obbligatori sono in questo caso: il modulo di afferenza (\textit{module}) e il messaggio in ingresso. Tramite la definizione delle trasmissioni è possibile, con un particolare attributo detto \textit{fractional}, definire la probabilità di propagare un determinato messaggio \textit{message\_out} sulla ricezione di un particolare messaggio \textit{message\_in}. 
+La definizione delle applicazioni è composta da quattro parti: \textit{moduli} (o \textit{servizi}), \textit{messaggi}, \textit{trasmissioni} e dati generali. I \textit{moduli} possono avere diversi attributi, anche a seconda dello specifico scenario, ma quelli obbligatori sono solo un identificativo univoco (\textit{ID}) e il nome (\textit{name}). I \textit{messaggi}, ovvero i dati scambiati, hanno principalmente due attributi obbligatori: il numero di istruzioni (\textit{instructions}) e la grandezza in byte (\textit{bytes}). Le \textit{trasmissioni} definiscono le modalità in cui i servizi scambiano le informazioni e tramite le quali si inviano dati. Gli attributi obbligatori in questo caso sono: il modulo di afferenza (\textit{module}) e il messaggio in ingresso. Tramite la definizione delle trasmissioni è possibile, con un particolare attributo detto \textit{fractional}, definire la probabilità di propagare un determinato messaggio \textit{message\_out} sulla ricezione di un particolare messaggio \textit{message\_in}. 
 
 In Figura \ref{fig:applications_ddf} sono mostrate tre tipologie di applicazioni che sono realizzabili. La prima, \texttt{Application 1}, è strutturata gerarchicamente, con la ricezione dei messaggi $M_{ij}$ che scatena l'invio di altri messaggi. Nella seconda applicazione, \texttt{Application 2}, è possibile osservare un'interazione di un servizio con se stesso ed infine nell'ultima applicazione, \texttt{Application 3}, è mostrato il \textit{broadcasting} di un messaggio $M_{B1}$ che raggiunge tutti i moduli dell'applicazione. In tutte e tre le applicazioni $WL_i$ indica il nodo che genera il carico di lavoro (ad esempio un dispositivo IoT).
 
@@ -67,9 +68,9 @@ popB.set_src_control({'number': 1, 'message': appB.get_message('M.action'), 'dis
 
 \end{lstlisting}
 
-Nel Listing \ref{lst:population-policy} è mostrato un esempio di definizione di politiche di \textit{Population}, una statica ed una dinamica. Nelle righe 1 e 2 vengono definite due distribuzioni temporali: la prima che inizia a 3000 unità temporali e da quel punto in poi invoca un'attivazione ogni 300 unità temporali, la seconda invece che invoca un'attivazione ogni 10 unità temporali. Alla riga 4 viene generata un'istanza di una classe Population predefinita. Le applicazioni YAFS hanno due tipi di moduli: \textit{workload sources} e \textit{workload sinks} (rispettivamente "sensori" ed "attuatori"). Le righe 5 e 6, tramite JSON, definiscono l'allocazione dei moduli sink e dei moduli source con una specifica distribuzione e il tipo di messaggio che questi devono trattare.
+Nel Listing \ref{lst:population-policy} è mostrato un esempio di definizione di politiche di \textit{Population}: una statica ed una dinamica. Nelle righe 1 e 2 vengono definite due distribuzioni temporali: la prima che inizia a 3000 unità temporali e da quel punto in poi invoca un'attivazione ogni 300 unità temporali, la seconda invece che invoca un'attivazione ogni 10 unità temporali. Alla riga 4 viene generata un'istanza di una classe Population predefinita. Le applicazioni YAFS hanno due tipi di moduli: \textit{workload sources} e \textit{workload sinks} (rispettivamente "sensori" ed "attuatori"). Le righe 5 e 6, tramite JSON, definiscono l'allocazione dei moduli sink e dei moduli source con una specifica distribuzione e il tipo di messaggio che questi devono trattare.
 
-Nel caso della seconda politica di \textit{Population}, viene utilizzato un modello più complesso (righe 8-11). Alla riga 9 viene infatti istanziato un oggetto Evolution (Listing \ref{population-evolution}). Questo segue la distribuzione di riga 1, dunque, il processo DES creato, inizia a produrre messaggi dopo un certo intervallo di tempo secondo una specifica scadenza. Ad ogni attivazione questo genera workload con le caratteristiche definite alla riga 11.
+Nel caso della seconda politica di \textit{Population}, viene utilizzato un modello più complesso (righe 8-11): alla riga 9 viene istanziato un oggetto Evolution (Listing \ref{lst:population-evolution}). Questo segue la distribuzione di riga 1, dunque, il processo DES creato, inizia a produrre messaggi dopo un certo intervallo di tempo secondo una specifica scadenza. Ad ogni attivazione il processo creato genera workload con le caratteristiche definite alla riga 11.
 
 \begin{lstlisting}[language=python, caption={Struttura di una classe Population \cite{YAFSSimulator}}, captionpos=b, label={lst:population-evolution}]
 
@@ -92,6 +93,25 @@ class Evolution(population):
 Nel Listing \ref{lst:population-evolution} è mostrata una versione semplificata della classe Evolution. In questo tipo di classi è sempre presente una funzione obbligatoria chiamata \texttt{initial\_allocation} e, facoltativamente, una funzione chiamata \texttt{run} che viene chiamata secondo l'eventuale distribuzione temporale specificata.
 
 \section{Descrizione dello scenario simulato}
+
+L'architettura di riferimento per la definizione dello scenario simulato è esposta in Figura \ref{fig:architettura_scenario}.
+
+\begin{figure}[!ht]
+  \includegraphics[width=14cm]{images/architettura_scenario}
+  \centering
+  \caption{Architettura dello scenario simulato}
+  \label{fig:architettura_scenario}
+\end{figure}
+
+Tra i vari aspetti considerati durante la definizione della topologia di rete si è voluto enfatizzare il concetto del Fog Computing come "architettura verticale". Dall'esempio in Figura \ref{fig:architettura_scenario} è infatti possibile evincere una struttura della rete gerarchica ed a livelli. Ogni livello è caratterizzato da diverse capacità di elaborazione, in base ai servizi offerti alla rete: un nodo a livelli più bassi offre pochi servizi, ma generalmente produce molti dati (ad esempio i dispositivi IoT), mentre un nodo a livelli più alti non genera dati \textit{propri}, ma piuttosto offre una rielaborazione dei dati ricevuti dai livelli più bassi offrendo molti servizi alla rete.
+
+Un fattore di particolare rilevanza è inoltre la \textit{raggiungibilità}. Ricordando infatti la necessità di rendere i servizi della rete disponibili anche nelle zone più remote della stessa, ovvero vicino all'\textit{edge} per ridurre al minimo la latenza, i nodi appartenenti a livelli più bassi sono più radicati nel territorio ed ognuno di essi è raggiungibile da aree via via più limitate e circoscritte. 
+
+\subsection{Architettura a livelli}
+
+
+
+
 
 
 

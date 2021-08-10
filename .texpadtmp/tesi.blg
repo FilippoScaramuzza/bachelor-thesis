@@ -7,45 +7,45 @@ Warning--empty booktitle in NetworkX
 Warning--empty chapter and pages in microservices
 Warning--empty publisher in microservices
 Warning--empty year in NISTMobileCloudComputing
-You've used 20 entries,
+You've used 22 entries,
             1791 wiz_defined-function locations,
-            570 strings with 8146 characters,
-and the built_in function-call counts, 3654 in all, are:
-= -- 236
-> -- 265
+            582 strings with 8524 characters,
+and the built_in function-call counts, 4008 in all, are:
+= -- 260
+> -- 287
 < -- 0
-+ -- 96
-- -- 76
-* -- 207
-:= -- 650
-add.period$ -- 60
-call.type$ -- 20
-change.case$ -- 18
++ -- 104
+- -- 82
+* -- 225
+:= -- 710
+add.period$ -- 66
+call.type$ -- 22
+change.case$ -- 20
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 188
-empty$ -- 363
-format.name$ -- 76
-if$ -- 789
+cite$ -- 26
+duplicate$ -- 208
+empty$ -- 402
+format.name$ -- 82
+if$ -- 868
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 20
-newline$ -- 103
-num.names$ -- 19
-pop$ -- 91
+int.to.str$ -- 22
+missing$ -- 22
+newline$ -- 113
+num.names$ -- 21
+pop$ -- 101
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 60
+skip$ -- 67
 stack$ -- 0
 substring$ -- 0
-swap$ -- 26
+swap$ -- 29
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
-while$ -- 19
-width$ -- 22
-write$ -- 201
+while$ -- 21
+width$ -- 24
+write$ -- 221
 (There were 4 warnings)
