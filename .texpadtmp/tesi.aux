@@ -70,11 +70,11 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}YAFS, \textit  {Yet Another Fog Simulator}}{11}{subsection.1.3.1}\protected@file@percent }
 \citation{YAFSSimulator}
 \citation{NetworkX}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Architettura Funzionale del Sistema Realizzato}{14}{chapter.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Architettura del Sistema Simulato}{14}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Struttura e funzionamento di YAFS}{14}{section.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Topologia e modellazione delle entità}{14}{subsection.2.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Struttura e Funzionamento di YAFS}{14}{section.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Topologia e Modellazione delle Entità}{14}{subsection.2.1.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Architettura di YAFS}}{15}{figure.caption.12}\protected@file@percent }
 \newlabel{fig:YAFS_classes}{{2.1}{15}{Architettura di YAFS}{figure.caption.12}{}}
 \citation{YAFSSimulator}
@@ -89,8 +89,8 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Politiche dinamiche}{17}{subsection.2.1.3}\protected@file@percent }
 \citation{YAFSSimulator}
 \citation{YAFSSimulator}
-\newlabel{lst:population-policy}{{2.2}{18}{Definizione di due Population policies: una statica (\textit {popA}) ed una dinamica (\textit {popB}) \cite {YAFSSimulator}}{lstlisting.2.2}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}Definizione di due Population policies: una statica (\textit  {popA}) ed una dinamica (\textit  {popB}) \cite  {YAFSSimulator}}{18}{lstlisting.2.2}\protected@file@percent }
+\newlabel{lst:population-policy}{{2.2}{18}{Definizione di due Population policies: una statica (\texttt {popA}) ed una dinamica (\texttt {popB}) \cite {YAFSSimulator}}{lstlisting.2.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}Definizione di due Population policies: una statica (\texttt  {popA}) ed una dinamica (\texttt  {popB}) \cite  {YAFSSimulator}}{18}{lstlisting.2.2}\protected@file@percent }
 \citation{YAFSSimulator}
 \citation{YAFSSimulator}
 \newlabel{lst:population-evolution}{{2.3}{19}{Struttura di una classe Population \cite {YAFSSimulator}}{lstlisting.2.3}{}}
@@ -99,22 +99,29 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Architettura dello scenario simulato\relax }}{20}{figure.caption.14}\protected@file@percent }
 \newlabel{fig:architettura_scenario}{{2.3}{20}{Architettura dello scenario simulato\relax }{figure.caption.14}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Architettura a livelli}{21}{subsection.2.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Implementazione}{22}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Livello IoT/Edge}{21}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Livello Fog $L0$}{22}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Livello Fog $L1$}{22}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Livello Fog $L2$}{22}{section*.18}\protected@file@percent }
+\citation{WattsStrogatzModel}
+\@writefile{toc}{\contentsline {subsubsection}{Livello Cloud}{23}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Interconnessioni tra Livelli e Scambio di Messaggi}{23}{subsection.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Implementazione}{24}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:implementazione}{{3}{22}{Implementazione}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Descrizione generale delle simulazioni}{22}{section.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Il simulatore YAFS}{22}{subsection.3.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Realizzazione del software di simulazione}{22}{section.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Implementazione della generazione del grafo}{22}{subsection.3.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Implementazione dell'algoritmo di placement}{23}{subsection.3.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Implementazione della simulazione}{23}{subsection.3.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Risultati}{24}{chapter.4}\protected@file@percent }
+\newlabel{chapter:implementazione}{{3}{24}{Implementazione}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Descrizione generale delle simulazioni}{24}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Il simulatore YAFS}{24}{subsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Realizzazione del software di simulazione}{24}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Implementazione della generazione del grafo}{24}{subsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Implementazione dell'algoritmo di placement}{25}{subsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Implementazione della simulazione}{25}{subsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Risultati}{26}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Simulazioni}{24}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Conclusioni}{25}{chapter*.15}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendice}{26}{appendix.Alph1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Simulazioni}{26}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Conclusioni}{27}{chapter*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendice}{28}{appendix.Alph1}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibstyle{unsrt}
@@ -127,8 +134,8 @@
 \bibcite{ThreeLevelArchitecture}{5}
 \bibcite{RealTimeDecisionMakingSmartVehicles}{6}
 \bibcite{FogBarcellona}{7}
+\@writefile{toc}{\contentsline {chapter}{Bibliografia}{29}{appendix.Alph1}\protected@file@percent }
 \bibcite{EdgeComputing}{8}
-\@writefile{toc}{\contentsline {chapter}{Bibliografia}{27}{appendix.Alph1}\protected@file@percent }
 \bibcite{MultiAccessEdgeComputing}{9}
 \bibcite{MistComputing}{10}
 \bibcite{MistComputingFutureDirections}{11}
@@ -140,7 +147,8 @@
 \bibcite{NetworkX}{17}
 \bibcite{DDF_IOT_App}{18}
 \bibcite{microservices}{19}
-\bibcite{FogForTrafficControl}{20}
-\bibcite{NISTMobileCloudComputing}{21}
-\bibcite{MobileEdgeComputing}{22}
-\gdef \@abspage@last{34}
+\bibcite{WattsStrogatzModel}{20}
+\bibcite{FogForTrafficControl}{21}
+\bibcite{NISTMobileCloudComputing}{22}
+\bibcite{MobileEdgeComputing}{23}
+\gdef \@abspage@last{37}

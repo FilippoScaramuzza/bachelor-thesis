@@ -3,49 +3,59 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: /Users/filippo/Università/Tesi/.texpadtmp/tesi.aux
 The style file: unsrt.bst
 Database file #1: ../riferimenti.bib
-Warning--empty booktitle in NetworkX
-Warning--empty chapter and pages in microservices
-Warning--empty publisher in microservices
+You're missing a field part---line 152 of file ../riferimenti.bib
+ : number = 
+ :          ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 215 of file ../riferimenti.bib
+ : 
+ : issn={1476-4687},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty booktitle in CloudComputingBigDataIssues
+Warning--empty journal in NetworkX
+Warning--empty year in NetworkX
+Warning--can't use both author and editor fields in microservices
 Warning--empty year in NISTMobileCloudComputing
-You've used 22 entries,
+You've used 23 entries,
             1791 wiz_defined-function locations,
-            582 strings with 8524 characters,
-and the built_in function-call counts, 4008 in all, are:
-= -- 260
-> -- 287
-< -- 0
-+ -- 104
-- -- 82
-* -- 225
-:= -- 710
-add.period$ -- 66
-call.type$ -- 22
-change.case$ -- 20
+            624 strings with 9016 characters,
+and the built_in function-call counts, 6277 in all, are:
+= -- 529
+> -- 298
+< -- 9
++ -- 108
+- -- 85
+* -- 430
+:= -- 956
+add.period$ -- 70
+call.type$ -- 23
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 208
-empty$ -- 402
-format.name$ -- 82
-if$ -- 868
+cite$ -- 28
+duplicate$ -- 298
+empty$ -- 597
+format.name$ -- 85
+if$ -- 1453
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 22
-newline$ -- 113
-num.names$ -- 21
-pop$ -- 101
+int.to.str$ -- 23
+missing$ -- 24
+newline$ -- 118
+num.names$ -- 23
+pop$ -- 74
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 67
+skip$ -- 172
 stack$ -- 0
-substring$ -- 0
-swap$ -- 29
-text.length$ -- 0
+substring$ -- 408
+swap$ -- 101
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
-while$ -- 21
-width$ -- 24
-write$ -- 221
-(There were 4 warnings)
+warning$ -- 5
+while$ -- 51
+width$ -- 25
+write$ -- 252
+(There were 2 error messages)
