@@ -1,0 +1,143 @@
+\begin{thebibliography}{10}
+
+\bibitem{NISTCloudComputing}
+P.~Mell and T.~Grance.
+\newblock The nist definition of cloud computing.
+\newblock {\em NIST Special Pubblication 800-145}, 2011.
+
+\bibitem{OpenFogReferenceArchitecture}
+OpenFog.
+\newblock {IEEE Standard for Adoption of OpenFog Reference Architecture for Fog
+  Computing}.
+\newblock {\em IEEE Std 1934-2018}, pages 1--176, 2018.
+
+\bibitem{FogComputingInIoT}
+Flavio Bonomi, Rodolfo Milito, Jiang Zhu, and Sateesh Addepalli.
+\newblock {Fog Computing and Its Role in the Internet of Things}.
+\newblock In {\em Proceedings of the First Edition of the MCC Workshop on
+  Mobile Cloud Computing}, MCC '12, page 13–16, New York, NY, USA, 2012.
+  Association for Computing Machinery.
+
+\bibitem{CloudComputingBigDataIssues}
+Pedro Neves, Bradley Schmerl, Javier Cámara, and Jorge Bernardino.
+\newblock {Big Data in Cloud Computing: Features and Issues}.
+\newblock pages 307--314, 01 2016.
+
+\bibitem{ThreeLevelArchitecture}
+Jie Lin, Wei Yu, Nan Zhang, Xinyu Yang, Hanlin Zhang, and Wei Zhao.
+\newblock {A Survey on Internet of Things: Architecture, Enabling Technologies,
+  Security and Privacy, and Applications}.
+\newblock {\em IEEE Internet of Things Journal}, 4(5):1125--1142, 2017.
+
+\bibitem{RealTimeDecisionMakingSmartVehicles}
+Andrei Furda and Ljubo Vlacic.
+\newblock {Real-Time Decision Making for Autonomous City Vehicles}.
+\newblock {\em Journal of Robotics and Mechatronics}, 22:694, 08 2010.
+
+\bibitem{FogBarcellona}
+Jordi Garcia, Ester Simó, Xavier Masip-Bruin, Eva Marín-Tordera, and Sergi
+  Sànchez-López.
+\newblock {Do We Really Need Cloud? Estimating the Fog Computing Capacities in
+  the City of Barcelona}.
+\newblock In {\em IEEE/ACM International Conference on Utility and Cloud
+  Computing Companion (UCC Companion)}, pages 290--295, 2018.
+
+\bibitem{EdgeComputing}
+Weisong Shi, Jie Cao, Quan Zhang, Youhuizi Li, and Lanyu Xu.
+\newblock {Edge Computing: Vision and Challenges}.
+\newblock {\em IEEE Internet of Things Journal}, 3(5):637--646, 2016.
+
+\bibitem{MultiAccessEdgeComputing}
+F.~Giust.
+\newblock {MEC deployments in 4G and evolution towards 5G}.
+\newblock {\em MEC Deployments in 4G and Evolution Towards 5G}, 2018.
+
+\bibitem{MistComputing}
+Jürgo~S. Preden, Kalle Tammemäe, Axel Jantsch, Mairo Leier, Andri Riid, and
+  Emine Calis.
+\newblock {The Benefits of Self-Awareness and Attention in Fog and Mist
+  Computing}.
+\newblock {\em Computer}, 48(7):37--45, 2015.
+
+\bibitem{MistComputingFutureDirections}
+Manas~Kumar Yogi, K.~Chandra sekhar, and G.~Vijay Kumar.
+\newblock {Mist Computing: Principles, Trends and Future Direction}.
+\newblock {\em International Journal of Computer Science and Engineering},
+  4(7):19–21, Jul 2017.
+
+\bibitem{iFogSim}
+Harshit Gupta, Amir Vahid~Dastjerdi, Soumya~K. Ghosh, and Rajkumar Buyya.
+\newblock {iFogSim: A toolkit for modeling and simulation of resource
+  management techniques in the Internet of Things, Edge and Fog computing
+  environments}.
+\newblock {\em Software: Practice and Experience}, 47(9):1275--1296, 2017.
+
+\bibitem{EdgeCloudSim}
+Cagatay Sonmez, Atay Ozgovde, and Cem Ersoy.
+\newblock {EdgeCloudSim: An environment for performance evaluation of Edge
+  Computing systems}.
+\newblock In {\em Second International Conference on Fog and Mobile Edge
+  Computing (FMEC)}, pages 39--44, 2017.
+
+\bibitem{EmuFog}
+Ruben Mayer, Leon Graser, Harshit Gupta, Enrique Saurez, and Umakishore
+  Ramachandran.
+\newblock {EmuFog: Extensible and scalable emulation of large-scale fog
+  computing infrastructures}.
+\newblock In {\em IEEE Fog World Congress (FWC)}, pages 1--6, 2017.
+
+\bibitem{FogBed}
+Antonio Coutinho, Fabiola Greve, Cassio Prazeres, and Joao Cardoso.
+\newblock {Fogbed: A Rapid-Prototyping Emulation Environment for Fog
+  Computing}.
+\newblock In {\em IEEE International Conference on Communications (ICC)}, pages
+  1--7, 2018.
+
+\bibitem{YAFSSimulator}
+Isaac Lera, Carlos Guerrero, and Carlos Juiz.
+\newblock {YAFS: A Simulator for IoT Scenarios in Fog Computing}.
+\newblock {\em IEEE Access}, 7:91745--91758, 2019.
+
+\bibitem{NetworkX}
+Aric Hagberg, Pieter Swart, and Daniel S~Chult.
+\newblock {Exploring network structure, dynamics, and function using networkx}.
+
+\bibitem{DDF_IOT_App}
+Nam~Ky Giang, Michael Blackstock, Rodger Lea, and Victor~C.M. Leung.
+\newblock {Developing IoT applications in the Fog: A Distributed Dataflow
+  approach}.
+\newblock In {\em 5th International Conference on the Internet of Things
+  (IOT)}, pages 155--162, 2015.
+
+\bibitem{microservices}
+Nicola Dragoni, Saverio Giallorenzo, Alberto~Lluch Lafuente, Manuel Mazzara,
+  Fabrizio Montesi, Ruslan Mustafin, and Larisa Safina.
+\newblock {\em {Microservices: Yesterday, Today, and Tomorrow}}, pages
+  195--216.
+\newblock Springer International Publishing, Cham, 2017.
+
+\bibitem{WattsStrogatzModel}
+Duncan~J. Watts and Steven~H. Strogatz.
+\newblock {Collective dynamics of `small-world' networks}.
+\newblock {\em Nature}, 393(6684):440--442, Jun 1998.
+
+\bibitem{FogForTrafficControl}
+Qiang Wu, Jun Shen, Binbin Yong, Jianqing Wu, Fucun Li, Jinqiang Wang, and
+  Qingguo Zhou.
+\newblock {Smart fog based workflow for traffic control networks}.
+\newblock {\em Future Generation Computer Systems}, 97:825--835, 2019.
+
+\bibitem{NISTMobileCloudComputing}
+NIST.
+\newblock Mobile cloud computing. [online].
+\newblock {\em Technical Report, National Institute of Standards and
+  Technology}.
+\newblock \url{https://www.nist.gov/programs-projects/mobile-cloud-computing}.
+
+\bibitem{MobileEdgeComputing}
+Rodrigo Roman, Javier Lopez, and Masahiro Mambo.
+\newblock {Mobile edge computing, Fog et al.: A survey and analysis of security
+  threats and challenges}.
+\newblock {\em Future Generation Computer Systems}, 78:680--698, 2018.
+
+\end{thebibliography}
