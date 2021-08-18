@@ -27,14 +27,9 @@
 \contentsline {subsubsection}{Livello Cloud}{23}{section*.19}%
 \contentsline {subsection}{\numberline {2.2.2}Interconnessioni tra Livelli e Scambio di Messaggi}{23}{subsection.2.2.2}%
 \contentsline {chapter}{\numberline {3}Implementazione}{24}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Descrizione generale delle simulazioni}{24}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Il simulatore YAFS}{24}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Realizzazione del software di simulazione}{24}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Implementazione della generazione del grafo}{24}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Implementazione dell'algoritmo di placement}{25}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Implementazione della simulazione}{25}{subsection.3.2.3}%
-\contentsline {chapter}{\numberline {4}Risultati}{26}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Simulazioni}{26}{section.4.1}%
-\contentsline {chapter}{Conclusioni}{27}{chapter*.20}%
-\contentsline {chapter}{\numberline {A}Appendice}{28}{appendix.Alph1}%
-\contentsline {chapter}{Bibliografia}{29}{appendix.Alph1}%
+\contentsline {section}{\numberline {3.1}Processo di Simulazione dello Scenario}{24}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Risultati}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Simulazioni}{25}{section.4.1}%
+\contentsline {chapter}{Conclusioni}{26}{chapter*.21}%
+\contentsline {chapter}{\numberline {A}Appendice}{27}{appendix.Alph1}%
+\contentsline {chapter}{Bibliografia}{28}{appendix.Alph1}%
