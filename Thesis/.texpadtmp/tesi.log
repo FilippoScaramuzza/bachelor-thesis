@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.7)  18 AUG 2021 22:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.7)  22 AUG 2021 23:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -460,7 +460,7 @@ LaTeX Info: Redefining \nameref on input line 305.
 \c@proposizione=\count319
 \c@problema=\count320
 \c@proprieta=\count321
-<images/logoUnipr.png, id=143, 830.10126pt x 751.80875pt>
+<images/logoUnipr.png, id=155, 830.10126pt x 751.80875pt>
 File: images/logoUnipr.png Graphic file (type png)
 <use images/logoUnipr.png>
 Package pdftex.def Info: images/logoUnipr.png  used on input line 327.
@@ -498,114 +498,112 @@ Capitolo 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8 
-     [2
+l.10 
+      [2
 
 
 ] [3]
-<images/FogCloudToThingContinuum.png, id=237, 2983.145pt x 2352.79pt>
+<images/FogCloudToThingContinuum.png, id=252, 2983.145pt x 2352.79pt>
 File: images/FogCloudToThingContinuum.png Graphic file (type png)
 <use images/FogCloudToThingContinuum.png>
-Package pdftex.def Info: images/FogCloudToThingContinuum.png  used on input line 20.
+Package pdftex.def Info: images/FogCloudToThingContinuum.png  used on input line 22.
 (pdftex.def)             Requested size: 341.43306pt x 269.25479pt.
- [4 <./images/FogCloudToThingContinuum.png>] [5]
-<images/smartcars_trafficcontrol.png, id=260, 1052.93375pt x 850.17625pt>
+ [4 <./images/FogCloudToThingContinuum.png>] [5] [6]
+<images/smartcars_trafficcontrol.png, id=281, 1052.93375pt x 850.17625pt>
 File: images/smartcars_trafficcontrol.png Graphic file (type png)
 <use images/smartcars_trafficcontrol.png>
-Package pdftex.def Info: images/smartcars_trafficcontrol.png  used on input line 47.
+Package pdftex.def Info: images/smartcars_trafficcontrol.png  used on input line 49.
 (pdftex.def)             Requested size: 398.33858pt x 321.63037pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 47--49
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 49--51
  [][] 
  []
 
-[6] [7 <./images/smartcars_trafficcontrol.png>]
-<images/smartcities_smartbuildings.png, id=277, 1063.975pt x 582.175pt>
+[7 <./images/smartcars_trafficcontrol.png>]
+<images/smartcities_smartbuildings.png, id=292, 1063.975pt x 582.175pt>
 File: images/smartcities_smartbuildings.png Graphic file (type png)
 <use images/smartcities_smartbuildings.png>
-Package pdftex.def Info: images/smartcities_smartbuildings.png  used on input line 60.
+Package pdftex.def Info: images/smartcities_smartbuildings.png  used on input line 62.
 (pdftex.def)             Requested size: 398.33858pt x 217.95087pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 60--62
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 62--64
  [][] 
  []
 
-[8 <./images/smartcities_smartbuildings.png>] [9] [10] [11]
-Overfull \hbox (0.37672pt too wide) in paragraph at lines 101--102
+[8] [9 <./images/smartcities_smartbuildings.png>] [10] [11]
+Overfull \hbox (0.37672pt too wide) in paragraph at lines 103--104
 []\OT1/cmr/bx/n/12 Placement, Sche-du-ling, Rou-ting e pro-ces-si per-so-na-liz-za-ti\OT1/cmr/m/n/12 . L'al-
  []
 
 [12]) (./architettura.tex [13]
 Capitolo 2.
-<images/YAFS_classes.png, id=354, 1943.26pt x 1284.8pt>
+<images/YAFS_classes.png, id=369, 1943.26pt x 1284.8pt>
 File: images/YAFS_classes.png Graphic file (type png)
 <use images/YAFS_classes.png>
-Package pdftex.def Info: images/YAFS_classes.png  used on input line 11.
+Package pdftex.def Info: images/YAFS_classes.png  used on input line 13.
 (pdftex.def)             Requested size: 341.43306pt x 225.72557pt.
 [14
 
-]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 22.
- [15 <./images/YAFS_classes.png>]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 23.
+] [15 <./images/YAFS_classes.png>]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 24.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 25.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
-<images/applications_ddf.png, id=380, 2324.685pt x 654.445pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
+<images/applications_ddf.png, id=396, 2324.685pt x 654.445pt>
 File: images/applications_ddf.png Graphic file (type png)
 <use images/applications_ddf.png>
-Package pdftex.def Info: images/applications_ddf.png  used on input line 44.
+Package pdftex.def Info: images/applications_ddf.png  used on input line 46.
 (pdftex.def)             Requested size: 398.33858pt x 112.13293pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 44--46
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 46--48
  [][] 
  []
 
 [16] [17 <./images/applications_ddf.png>] [18]
-<images/architettura_scenario.png, id=436, 2400.97pt x 2894.815pt>
+<images/architettura_scenario.png, id=456, 2400.97pt x 2894.815pt>
 File: images/architettura_scenario.png Graphic file (type png)
 <use images/architettura_scenario.png>
-Package pdftex.def Info: images/architettura_scenario.png  used on input line 101.
+Package pdftex.def Info: images/architettura_scenario.png  used on input line 103.
 (pdftex.def)             Requested size: 398.33858pt x 480.27415pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 101--103
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 103--105
  [][] 
  []
 
-[19] [20 <./images/architettura_scenario.png>]
+[19] [20 <./images/architettura_scenario.png>] [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 121.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 121.
-
-[21]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 125.
+(hyperref)                removing `math shift' on input line 123.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 125.
+(hyperref)                removing `math shift' on input line 123.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 129.
+(hyperref)                removing `math shift' on input line 127.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 129.
+(hyperref)                removing `math shift' on input line 127.
 
-[22]) (./implementazione.tex [23]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 131.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 131.
+
+[22] [23]) (./implementazione.tex [24]
 Capitolo 3.
-[24
+[25
 
 ]
-<images/sim_flow_diagram.png, id=494, 3216.015pt x 1477.52pt>
+<images/sim_flow_diagram.png, id=517, 3216.015pt x 1477.52pt>
 File: images/sim_flow_diagram.png Graphic file (type png)
 <use images/sim_flow_diagram.png>
 Package pdftex.def Info: images/sim_flow_diagram.png  used on input line 17.
@@ -615,38 +613,45 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 17--19
  [][] 
  []
 
-) (./risultati.tex [25 <./images/sim_flow_diagram.png>] [26]
+[26 <./images/sim_flow_diagram.png>] [27]
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 71.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 71.
+) (./risultati.tex [28]
 Capitolo 4.
-) [27
+) [29
 
-] (./conclusioni.tex) [28
+] (./conclusioni.tex) [30
 
 
 ] (./appendice.tex
 Appendice A.
-) [29
+) [31
 
 
-] (/Users/filippo/Università/Tesi/Thesis/.texpadtmp/tesi.bbl [30
+] (/Users/filippo/Università/Tesi/Thesis/.texpadtmp/tesi.bbl [32
 
 
-] [31] [32]) [33] (/Users/filippo/Università/Tesi/Thesis/.texpadtmp/tesi.aux)
+] [33] [34]) [35] (/Users/filippo/Università/Tesi/Thesis/.texpadtmp/tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
-(rerunfilecheck)             Checksum: AAB84A0410F172E06E2BCDB7CB8D6C5D;6647.
+(rerunfilecheck)             Checksum: 31BAB3CD822EBE94820D18BEB715B495;7273.
  ) 
 Here is how much of TeX's memory you used:
- 14675 strings out of 478994
- 214068 string characters out of 5858185
- 696221 words of memory out of 5000000
- 31743 multiletter control sequences out of 15000+600000
+ 14722 strings out of 478994
+ 214792 string characters out of 5858185
+ 697322 words of memory out of 5000000
+ 31771 multiletter control sequences out of 15000+600000
  416195 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,12n,74p,1821b,1423s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /Users/filippo/Università/Tesi/Thesis/.texpadtmp/tesi.pdf (38 pages, 2976790 bytes).
+ 71i,12n,74p,1821b,1432s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on /Users/filippo/Università/Tesi/Thesis/.texpadtmp/tesi.pdf (40 pages, 3006039 bytes).
 PDF statistics:
- 646 PDF objects out of 1000 (max. 8388607)
- 558 compressed objects within 6 object streams
- 161 named destinations out of 1000 (max. 500000)
- 321 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 701 PDF objects out of 1000 (max. 8388607)
+ 606 compressed objects within 7 object streams
+ 177 named destinations out of 1000 (max. 500000)
+ 345 words of extra memory for PDF output out of 10000 (max. 10000000)
 

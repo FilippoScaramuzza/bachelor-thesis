@@ -1,6 +1,8 @@
 \chapter{Architettura del Sistema Simulato}	
 \label{chapter:architettura}
 
+In questo capitolo verranno affrontati innanzitutto i dettagli implementativi del simulatore \textit{YAFS}, la sua struttura e la modellazione delle simulazioni. Successivamente verranno approfondite le caratteristiche degli scenari simulati nel corrente lavoro di Tesi.
+
 \section{Struttura e Funzionamento di YAFS}
 
 Per le simulazioni realizzate nel corrente lavoro di Tesi è stato fatto uso del simulatore \textit{YAFS} \footnote{Disponibile su: \url{https://github.com/acsicuib/YAFS}} (\textit{Yet Another Fog Simulator}) \cite{YAFSSimulator}. Quest'ultimo utilizza una libreria per la generazione e la gestione degli eventi chiamata \textit{SimPy} \footnote{Disponibile su: \url{https://simpy.readthedocs.io}}, ovvero un'implementazione di un simulatore ad eventi discreti (DES, \textit{Discrete Event Simulator}), che garantisce un'interfaccia per la definizione dei processi (i componenti attivi della simulazione) e delle risorse (ad esempio i nodi ed i collegamenti della rete).
@@ -10,7 +12,7 @@ YAFS è definito principalmente da sei classi: \textit{Core}, \textit{Topology},
 \begin{figure}[!ht]
   \includegraphics[width=12cm]{images/YAFS_classes}
   \centering
-  \caption[Architettura di YAFS]{Architettura di YAFS}
+  \caption[Architettura di YAFS]{Architettura di YAFS.\cite{YAFSSimulator}}
   \label{fig:YAFS_classes}
 \end{figure}
 
@@ -43,7 +45,7 @@ In YAFS le applicazioni (intese come raggruppamenti di servizi), sono strutturat
 \begin{figure}[!ht]
   \includegraphics[width=14cm]{images/applications_ddf}
   \centering
-  \caption{Tre tipologie di applicazioni realizzabili, con la loro rappresentazione tramite grafo.}
+  \caption{Tre tipologie di applicazioni realizzabili, con la loro rappresentazione tramite grafo.\cite{YAFSSimulator}}
   \label{fig:applications_ddf}
 \end{figure}
 
@@ -110,7 +112,7 @@ Un fattore di particolare rilevanza è inoltre la \textit{raggiungibilità}. Ric
 
 \subsection{Architettura a livelli}
 
-Il sistema simulato nel corrente lavoro di Tesi offre degli spunti per l'implementazione del Fog Computing in scenari anche molto differenti tra loro. Infatti viene proposta una architettura a livelli molto flessibile e adattabile a diversi tipi di implementazioni, che possono avere una estensione provinciale o regionale.
+Il sistema simulato nel corrente lavoro di Tesi offre degli spunti per l'implementazione del Fog Computing in scenari anche molto differenti tra loro. Infatti viene proposta una architettura a livelli molto flessibile e adattabile a diversi tipi di implementazioni, che possono avere qualsiasi estensione geografica a seconda delle diverse esigenze.
 
 \subsubsection{Livello IoT/Edge}
 
@@ -124,7 +126,7 @@ In questo livello sono raggruppati i nodi che forniscono i servizi che non rient
 
 \subsubsection{Livello Fog $L1$}
 
-In questo livello si trovano i nodi che si occupano di raccogliere ed aggregare i dati provenienti da più zone. Idealmente questi nodi hanno una copertura provinciale o sub-provinciale. Questi offrono diversi servizi alla rete, sia ai i livelli superiori che ai quelli inferiori, ad esempio fornendo raccolta dati per il mantenimento dello storico per i livelli inferiori e fornendo pre-elaborazione degli stessi per i livelli superiori. Le capacità di questi nodi sono piuttosto limitate, ma hanno il grande vantaggio di essere replicabili al fine di garantire la scalabilità. Nel caso di sovraccarico è inoltre possibile sfruttare ad esempio l'operazione di \textit{offloading}\footnote{Con \textit{offloading} si intende il trasferimento di attività computazionali ad alta intensità ad un processore separato, come un acceleratore hardware o ad una piattaforma esterna, come un cluster o il cloud. L'\textit{offload} dell'elaborazione su un nodo esterno può fornire maggiore potenza di elaborazione e superare i limiti hardware di un dispositivo, come potenza di calcolo, archiviazione ed energia limitate.} su nodi vicini dello stesso livello.
+In questo livello si trovano i nodi che si occupano di raccogliere ed aggregare i dati provenienti da più zone. Questi nodi possono avere, ad esempio, una copertura provinciale o sub-provinciale. Questi offrono diversi servizi alla rete, sia ai i livelli superiori che ai quelli inferiori, ad esempio fornendo raccolta dati per il mantenimento dello storico per i livelli inferiori e fornendo pre-elaborazione degli stessi per i livelli superiori. Le capacità di questi nodi sono piuttosto limitate, ma hanno il grande vantaggio di essere replicabili al fine di garantire la scalabilità. Nel caso di sovraccarico è inoltre possibile sfruttare ad esempio l'operazione di \textit{offloading}\footnote{Con \textit{offloading} si intende il trasferimento di attività computazionali ad alta intensità ad un processore separato, come un acceleratore hardware o ad una piattaforma esterna, come un cluster o il cloud. L'\textit{offload} dell'elaborazione su un nodo esterno può fornire maggiore potenza di elaborazione e superare i limiti hardware di un dispositivo, come potenza di calcolo, archiviazione ed energia limitate.} su nodi vicini dello stesso livello.
 
 \subsubsection{Livello Fog $L2$}
 I nodi presenti in questo livello (e negli eventuali successivi Livelli Fog $LN$) hanno una copertura maggiore rispetto a quella dei livelli precedenti, ad esempio regionale o sub-regionale. Come anticipato in questo modello architetturale, i nodi ai livelli superiori hanno capacità computazionali via via sempre maggiori, in grado quindi di aggregare maggiormente i dati, effettuare veloci analisi statistiche o implementare algoritmi di Machine Learning distribuiti.
@@ -134,7 +136,7 @@ I nodi presenti in questo livello (e negli eventuali successivi Livelli Fog $LN$
 In questo livello vengono raggruppati i servizi controllati dai produttori dei sensori e degli attuatori, nonché i servizi che richiedono risorse elevate per eseguire, ad esempio, algoritmi di Machine Learning o analisi statistiche avanzate. Nel Capitolo \ref{chapter:implementazione} verrà inoltre spiegato come il Cloud sia un tassello fondamentale per l'algoritmo di Placement, fungendo da ``riserva" per i servizi che non trovano un nodo utile per il piazzamento.
 
 \subsection{Interconnessioni tra Livelli e Scambio di Messaggi}
-
+\label{section:interconnesione_livelli}
 Una delle caratteristiche del Fog Computing è la flessibilità della sua implementazione. Infatti i nodi, seppur ordinati gerarchicamente, non sono necessariamente connessi con i nodi ai livelli subito successivi o precedenti, ma possono essere eventualmente connessi con qualsiasi altro livello superiore o inferiore. 
 
 Per quanto riguarda invece le interconnessioni interne ai livelli, queste seguono diverse modalità. Nel caso dei livelli IoT/Edge e Fog $L0$ generalmente non sono previste connessioni, mentre nei livelli Fog da $L1$ ad $LN$ viene utilizzato un grafo \textit{small-world}\footnote{Una rete \textit{small-world}, è un tipo di grafo in cui la maggior parte dei nodi sono uno vicino (\textit{neightbors}) dell'altro e dato un nodo, i suoi vicini sono molto probabilmente vicini tra loro, con il risultato che ogni nodo è raggiungibile dall'altro con un ridotto numero di \textit{hop}.} secondo il modello \textit{Watts-Strogatz} \cite{WattsStrogatzModel}.
