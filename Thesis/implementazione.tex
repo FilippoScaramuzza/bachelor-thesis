@@ -22,7 +22,57 @@ La definizione e l'esecuzione della simulazione seguono il diagramma di flusso m
 
 \subsection{Utilizzo del Software Realizzato}
 
-% TODO scrivere qui la questione della generazione della topologia, dei dettagli in experiment configuration, la distinzione tra le due vie di simulazione e così via.
+Entrambe le tipologie di simulazione, prevedono alcuni passaggi obbligati. Nella fase di inizializzazione del primo stadio delle simulazioni è presente la configurazione dell'esperimento. Questa può essere eseguita tramite opportune modifiche al file \texttt{experimentConfiguration.py}.
+
+\subsubsection{Configurazione della Topologia}
+
+La topologia, generata dinamicamente in fase di inizializzazione, può essere configurata con i seguenti parametri:
+\begin{itemize}
+	\item \texttt{IOT\_DEVUCES\_NUM}: il numero di device IoT che la rete deve supportare.
+	\item \texttt{NETWORK\_LEVELS\_NUM}: il numero di livelli dello scenario Fog. Questo valore comprende il livello IoT, il livello Gateway, i livelli Fog e il livello Cloud.
+	\item \texttt{REDUCTION\_FACTOR\_1}: il fattore di riduzione del numero di nodi dal livello IoT al livello Gateway.
+	\item \texttt{REDUCTION\_FACTOR\_2}: il fattore di riduzione del numero di nodi dal livello FOG $(i)$ al livello FOG $(i+1)$.
+	\item \texttt{LINK\_GENERATION\_PROBABILITY\_FOG0}: probabilità di generazione di collegamenti tra i nodi del livello FOG $(0)$.
+	\item \texttt{HUB\_GENERATION\_PROBABILITY}: probabilità di generazione di nodi ``hub" (con un elevato \textit{degree}) all'interno dei livelli FOG. 
+	\item \texttt{MIN\_CONN\_TO\_UPPER\_LEVEL}: numero minimo di connessioni da un livello FOG a quelli superiori.
+	\item \texttt{MAX\_CONN\_TO\_UPPER\_LEVEL}: numero massimo di connessioni da un livello FOG a quelli superiori.
+\end{itemize}
+
+\subsubsection{Configurazione delle Caratteristiche di Rete}
+
+È possibile, modificando gli opportuni parametri, agire sulle caratteristiche dei singoli nodi appartenenti alla topologia, come la loro memoria (\textit{RAM}) o il numero di istruzioni per unità di tempo (\textit{IPT}). La prima è configurabile tramite parametri nella forma \texttt{FUNC\_NODE\_RAM\_LEVEL}, dove \texttt{LEVEL} può essere \texttt{FOGi} oppure \texttt{CLOUD}. Allo stesso modo è possibile configurare le istruzioni per unità di tempo, tramite i parametri nella forma \texttt{FUNC\_NODE\_IPT\_LEVEL}. Questi parametri e tutti gli altri che hanno il prefisso \texttt{FUNC}, possono essere inizializzati con una stringa contenente una determinata distribuzione, ad esempio:
+\begin{lstlisting}[language=python]
+	self.FUNC_NODE_IPT_FOG2 = "random.randrange(400, 900)"
+\end{lstlisting}
+
+Allo stesso modo è possibile agire sulle caratteristiche dei collegamenti di rete, ovvero la loro larghezza di banda (\textit{BW}) e la velocità di propagazione del segnale (\textit{PR}). Per entrambe i parametri di configurazione sono nella forma:
+\begin{itemize}
+	\item \texttt{FUNC\_EDGE\_[PR o BW]\_SAME\_LEVEL}: il valore viene assegnato a collegamenti tra nodi che appartengono allo stesso livello.
+	\item \texttt{FUNC\_EDGE\_[PR o BW]\_ADJ\_LEVEL}: il valore viene assegnato a collegamenti tra nodi che appartengono a livelli adiacenti.
+	\item \texttt{FUNC\_EDGE\_[PR o BW]\_NON\_ADJ\_LEVEL\_1}: il valore viene assegnato a collegamenti tra nodi che sono separati da un solo altro livello oltre a quelli di appartenenza.
+	\item \texttt{FUNC\_EDGE\_[PR o BW]\_NON\_ADJ\_LEVEL\_2}: il valore viene assegnato a collegamenti tra nodi che sono separati da più di un livello oltre a quelli di appartenenza.
+\end{itemize}
+
+\subsubsection{Configurazione delle Applicazioni e delle Richieste}
+
+Tramite opportuni parametri, è possibile configurare la generazione di applicazioni e dei servizi ad esse collegati. Inoltre è possibile specificare il numero di richieste che devono essere effettuate dagli utenti (i dispositivi IoT o i nodi Gateway). 
+\begin{itemize}
+	\item \texttt{FUNC\_APP\_GENERATION}. Le applicazioni generate sono dei \textit{grafi diretti aciclici}. Un esempio di configurazione tramite questo parametro è esposto di seguito.
+		\begin{lstlisting}[language=python]
+		self.FUNC_APP_GENERATION = "nx.gn_graph(random.randint(2,7))"
+		\end{lstlisting}
+		I valori 2 e 7, indicano il range del possibile numero di servizi per quella specifica applicazione.
+	\item \texttt{FUNC\_APP\_DEADLINES}: distribuzione delle \textit{deadline} delle applicazioni. Questo specifica la priorità di una determinata applicazione in fase di esecuzione.
+	\item \texttt{FUNC\_SERVICE\_RESOURCES}: distribuzione delle risorse richieste dai servizi.
+	\item \texttt{FUNC\_SERVICEMESSAGESIZE}: distribuzione delle dimensioni dei messaggi scambiati tra i servizi.
+	\item \texttt{FUNC\_REQUESTPROB}: distribuzione di probabilità di richieste per le applicazioni.
+	\item \texttt{FUNC\_USERREQRAT}: distribuzione del numero di richieste emesse dagli utenti per le applicazioni.
+\end{itemize}
+
+\subsubsection{Analisi sull'Algoritmo di Placement}
+Il software è stato realizzato in modo che fosse possibile valutare l'algoritmo di \textit{placement} utilizzato, operando sui parametri del file \texttt{runExperiment.py}. In modo automatico, vengono generati 
+		$$\frac{\text{\texttt{VALUE\_TO}} - \text{\texttt{VALUE\_FROM}}}{\text{\texttt{STEP}}}$$
+scenari al variare del parametro \texttt{PARAM\_TO\_CHANGE}.
 
 \section{Implementazione del Simulatore}
 
@@ -73,6 +123,8 @@ new_nodes = iot_nodes // (fogi_reduction_factor ** (level-1)) if iot_nodes // (f
 # Small-World graph generation for FOG levels greater than 0 (e.g provincial fog nodes)
 H = nx.watts_strogatz_graph(int(new_nodes), 2, hub_prob)
 \end{lstlisting}
+
+% Andare avanti con la spiegazione sulla generazione delle varie cose.
 
 
 

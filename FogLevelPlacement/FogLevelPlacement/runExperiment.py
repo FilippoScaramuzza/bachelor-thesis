@@ -13,17 +13,17 @@ file = open('exp_json/placementResults.json', 'w')
 file.write("[]")
 file.close()
 
-param_to_change = "FUNC_APP_GENERATION"
-value_from = 4
-value_to = 21
-step = 1
+PARAM_TO_CHANGE = "FUNC_APP_GENERATION"
+VALUE_FROM = 4
+VALUE_TO = 21
+STEP = 1
 
-for x in range(value_from, value_to, step):
-    placeService.run(param_to_change, f'"nx.gn_graph({x})"', x)
+for x in range(VALUE_FROM, VALUE_TO, STEP):
+    placeService.run(PARAM_TO_CHANGE, f'"nx.gn_graph({x})"', x)
     generateSimulationSummary.run("Increasing number of services with fixed global resources.", f"service_num_{x}")
 
 # Data for plotting
-t = np.arange(value_from, value_to, step)
+t = np.arange(VALUE_FROM, VALUE_TO, STEP)
 path = pathlib.Path("exp_json")
 pathplots = pathlib.Path("plots")
 s = [v["app_placed"]/v["app_total"] for v in json.loads(open(str(path.absolute()) + "/placementResults.json").read())]
