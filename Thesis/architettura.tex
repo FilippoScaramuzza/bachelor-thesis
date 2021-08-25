@@ -23,16 +23,16 @@ Le entità della topologia sono modellate come un insieme di \textit{nodi} (ovve
 Gli attributi obbligatori per la definizione di un nodo sono un identificativo univoco (\textit{ID}), il numero di istruzioni eseguite dal nodo in un'unità di tempo (\textit{IPT}) e la capacità della memoria (\textit{RAM}). L'utente è libero di aggiungere attributi personalizzati, utili allo scenario specifico che si vuole studiare, come è stato fatto nel corrente lavoro di Tesi (maggiori informazioni sono al Capitolo \ref{chapter:implementazione}). Un esempio di definizione dei nodi è mostrato nel Listato \ref{lst:node-definition}. 
 \begin{lstlisting}[language=json, caption={Definizione di due nodi Fog utilizzando la rappresentazione JSON \cite{YAFSSimulator}}, captionpos=b, label={lst:node-definition}]
 {
-	"id": 120, "RAM": 1, "IPT": 530,
-	"POWERmin": 574,
-	"POWERmax": 646,
-	"coordinate": 
-	{
-		"lat": 39.30, "long": 3.34
-	}
+    "id": 120, "RAM": 1, "IPT": 530,
+    "POWERmin": 574,
+    "POWERmax": 646,
+    "coordinate": 
+    {
+        "lat": 39.30, "long": 3.34
+    }
 },
 {
-	"id": 12, "RAM": 10, "IPT": 100
+    "id": 12, "RAM": 10, "IPT": 100
 }
 \end{lstlisting}
 
