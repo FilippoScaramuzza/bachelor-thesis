@@ -132,7 +132,6 @@ def main(simulated_time,path_json, resultspath, specificSuffix,it):
 
     # SELECTOR algorithm
     selectorPath = DeviceSpeedAwareRouting()
-
     
     # SIMULATION Engine
     stop_time = simulated_time
