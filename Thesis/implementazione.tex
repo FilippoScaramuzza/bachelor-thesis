@@ -4,12 +4,12 @@
 \section[Sistema Realizzato per Simulazioni ed Analisi]{Sistema Realizzato per Simulazioni ed\\ Analisi}
 \label{section:sistema_analisi}
 
-Al fine di valutare le prestazioni degli scenari di Fog Computing, descritti al capitolo \ref{chapter:architettura}, è stato implementato un sistema di simulazione che ne permette in una prima fase la definizione (topologia, applicazioni, servizi, richieste, ecc...) e, successivamente, l'analisi dei principali aspetti utili alla comprensione dello scenario, come il successo del \textit{service placement} e delle richieste di servizi da parte dei vari nodi della rete.
+Al fine di valutare le prestazioni degli scenari di Fog Computing, descritti al Capitolo \ref{chapter:architettura}, è stato implementato un sistema di simulazione che ne permette in una prima fase la definizione (topologia, applicazioni, servizi, richieste, ecc...) e, successivamente, l'analisi dei principali aspetti utili alla comprensione dello scenario, come il successo del \textit{service placement} e delle richieste di servizi da parte dei nodi della rete.
 
 La definizione e l'esecuzione della simulazione seguono il diagramma di flusso mostrato in Figura \ref{fig:sim_flow_diagram}. Tramite il software realizzato è possibile eseguire due principali tipologie di analisi:
 \begin{enumerate}
 	\item \textbf{analisi del service placement}: viene valutato il successo del service placement al variare di specifici parametri di definizione dello scenario, specificando il numero di iterazioni e quali di questi devono variare ad ogni esecuzione;
-	\item \textbf{Analisi della simulazione}: una volta definito e simulato uno specifico scenario, è possibile ottenere un'analisi sul soddisfacimento delle richieste da parte dei nodi dei vari servizi offerti dalla rete, con e senza \textit{failure control} dei nodi.
+	\item \textbf{analisi della simulazione}: una volta definito e simulato uno specifico scenario, è possibile ottenere un'analisi sul soddisfacimento delle richieste da parte dei nodi dei vari servizi offerti dalla rete, con e senza \textit{failure control} dei nodi.
 \end{enumerate}
 
 
@@ -22,7 +22,7 @@ La definizione e l'esecuzione della simulazione seguono il diagramma di flusso m
 
 \subsection{Utilizzo del Software Realizzato}
 
-Entrambe le tipologie di simulazione prevedono alcuni passaggi obbligati. Nella fase di inizializzazione è necessaria la configurazione dell'esperimento. Questa può essere eseguita tramite opportune modifiche al file \texttt{\justify experimentConfiguration.py}.
+Entrambe le tipologie di simulazione prevedono alcuni passaggi obbligati. Nella fase di inizializzazione è necessaria la configurazione dell'esperimento. Questa può essere eseguita tramite opportune modifiche al file \texttt{\justify experimentConfiguration.py}. Le possibilità di configurazione sono esposte nel seguito.
 
 \subsubsection{Configurazione della Topologia}
 
@@ -40,7 +40,7 @@ La topologia, generata dinamicamente in fase di inizializzazione, può essere co
 
 \subsubsection{Configurazione delle Caratteristiche di Rete}
 
-È possibile, modificando gli opportuni parametri, agire sulle caratteristiche dei singoli nodi appartenenti alla topologia, come la loro memoria (\textit{RAM}) o il numero di istruzioni per unità di tempo (\textit{IPT}). La prima è configurabile tramite parametri nella forma \texttt{FUNC\_NODE\_RAM\_LEVEL}, dove \texttt{LEVEL} può essere \texttt{FOGi} oppure \texttt{CLOUD}. Allo stesso modo è possibile configurare le istruzioni per unità di tempo, tramite i parametri nella forma \texttt{FUNC\_NODE\_IPT\_LEVEL}. Questi parametri e tutti gli altri che hanno il prefisso \texttt{FUNC}, possono essere inizializzati con una stringa contenente una determinata distribuzione, ad esempio:
+È possibile, modificando gli opportuni parametri, agire sulle caratteristiche dei singoli nodi appartenenti alla topologia, come la loro memoria (\textit{RAM}) o il numero di istruzioni per unità di tempo (\textit{IPT}). La prima è configurabile tramite parametri nella forma \texttt{FUNC\_NODE\_RAM\_LEVEL}, dove \texttt{LEVEL} può essere \texttt{FOGi} (con \texttt{i} pari al numero del livello Fog di riferimento) oppure \texttt{CLOUD}. Allo stesso modo è possibile configurare le istruzioni per unità di tempo, tramite i parametri nella forma \texttt{FUNC\_NODE\_IPT\_LEVEL}. Questi parametri e tutti gli altri che hanno il prefisso \texttt{FUNC}, possono essere inizializzati con una stringa contenente una determinata distribuzione, ad esempio:
 \begin{lstlisting}[language=python]
 self.FUNC_NODE_IPT_FOG2 = "random.randrange(400, 900)"
 \end{lstlisting}
@@ -55,7 +55,7 @@ Allo stesso modo è possibile agire sulle caratteristiche dei collegamenti di re
 
 \subsubsection{Configurazione delle Applicazioni e delle Richieste}
 
-Tramite opportuni parametri, è possibile configurare la generazione di applicazioni e dei servizi ad esse collegati. Inoltre è possibile specificare il numero di richieste che devono essere effettuate dagli utenti (i dispositivi IoT o i nodi Gateway). 
+Tramite opportuni parametri, è possibile configurare la generazione delle applicazioni e dei servizi ad esse collegati. Inoltre è possibile specificare il numero di richieste che devono essere effettuate dagli utenti (i dispositivi IoT o i nodi Gateway). 
 \begin{itemize}
 	\item \texttt{FUNC\_APP\_GENERATION}. Le applicazioni generate sono dei \textit{grafi diretti aciclici}. Un esempio di configurazione tramite questo parametro è esposto di seguito.
 		\begin{lstlisting}[language=python]
@@ -72,6 +72,18 @@ self.FUNC_APP_GENERATION = "nx.gn_graph(random.randint(2,7))"\end{lstlisting}
 Il software è stato realizzato in modo che fosse possibile valutare l'algoritmo di placement utilizzato, operando sui parametri del file \texttt{runExperiment.py}. In modo automatico, vengono generati 
 		$$\frac{\text{\texttt{VALUE\_TO}} - \text{\texttt{VALUE\_FROM}}}{\text{\texttt{STEP}}}$$
 scenari al variare del parametro \texttt{PARAM\_TO\_CHANGE}.
+
+\subsubsection{Analisi dei Risultati}
+
+Nel caso in cui si intenda valutare le caratteristiche di un particolare scenario, dopo aver eseguito la simulazione, è possibile ottenere un sommario di quest'ultima. Questo è ottenibile dal file \texttt{generateSimulationSummary.py}. Il sommario generato è un file \texttt{pdf} contenente le seguenti informazioni:
+\begin{itemize}
+	\item descrizione dello scenario simulato;
+	\item elenco dei parametri di configurazione dello scenario;
+	\item valutazione della distribuzione dell'utilizzo delle risorse globali;
+	\item valutazione dell'utilizzo percentuale di risorse per ogni livello della topologia;
+	\item valutazione del successo dell'allocazione dei servizi per ogni livello della topologia;
+	\item valutazione del soddisfacimento delle richieste con e senza \textit{failure control} dei nodi.
+\end{itemize}
 
 \section{Implementazione del Simulatore}
 
@@ -96,7 +108,7 @@ dove $S_u$ e $S_v$ sono i servizi delle singole applicazioni. Nel caso particola
 
 Una volta eseguito l'ordinamento delle applicazioni, l'algoritmo di placement comincia ad allocare i servizi iniziando dalla prima applicazione della lista. L'algoritmo tende a posizionare i servizi nei primi nodi disponibili cominciando da quelli più vicini agli utenti (livello IoT). Nel caso di insufficienza di risorse e se il livello di privacy lo permette, i servizi vengono allocati nel Cloud. Una applicazione viene considerata ``allocata" se e solo se lo sono tutti i suoi servizi, altrimenti viene scartata.
 
-Le applicazioni che l'algoritmo di \textit{service placement} tenta di allocare, sono generate nella configurazione dell'esperimento.
+Le applicazioni che l'algoritmo di \textit{service placement} tenta di allocare sono generate nella configurazione dell'esperimento.
 
 \subsection{Experiment Configuration}
 
@@ -162,12 +174,12 @@ Dall'esecuzione delle funzioni \texttt{networkGeneration()}, \texttt{appGenerati
 \begin{itemize}
 	\item \texttt{appDefinition.json}: contiene la definizione delle applicazioni, i servizi che la compongono, i messaggi e le relative trasmissioni;
 	\item \texttt{networkDefinition.json}: contiene la definizione della rete, ovvero dei nodi e dei collegamenti tra essi;
-	\item \texttt{usersDefinition}: contiene la definizione dei nodi che generano il \textit{workload}.
+	\item \texttt{usersDefinition.json}: contiene la definizione dei nodi che generano il \textit{workload}.
 \end{itemize}
 
 Dall'esecuzione dell'algoritmo di placement, viene inoltre generato il file \texttt{allocDefinition.json}, utilizzato in fase di inizializzazione per definire la posizione dei servizi all'interno della rete. 
 
-Dai file json, la simulazione viene inizializzata in \texttt{runSimulation.py} come mostrato nel Listato \ref{lst:conf_sim}.
+Dai file json indicati sopra, la simulazione viene inizializzata in \texttt{runSimulation.py} come mostrato nel Listato \ref{lst:conf_sim}.
 
 \begin{lstlisting}[language=python, captionpos=b, caption={Configurazione della simulazione da file json.}, label={lst:conf_sim}]
 # TOPOLOGY
@@ -226,4 +238,4 @@ print("Simulation WITH failures starting...")
 s_f.run(stop_time, test_initial_deploy=False, show_progress_monitor=False)
 \end{lstlisting}
 
-Come accennato nel Capitolo \ref{chapter:architettura}, il simulatore YAFS, basa le simulazioni sulla libreria SimPy, il cui vantaggio è quello di poter avviare politiche dinamiche, come appunto il \textit{failure control} dei nodi, tramite la funzione \texttt{deploy\_monitor()}. Nel Listato \ref{lst:sim_exec}, a riga 7, viene definita la distribuzione di probabilità con la quale viene richiamata la politica di \textit{failure control}.
+Come accennato nel Capitolo \ref{chapter:architettura}, il simulatore YAFS, basa le simulazioni sulla libreria SimPy, il cui vantaggio è quello di poter avviare politiche dinamiche, come appunto il \textit{failure control} dei nodi, tramite la funzione \texttt{deploy\_monitor()}. Nel Listato \ref{lst:sim_exec}, a riga 7, viene definita la distribuzione temporale con la quale viene richiamata la politica di \textit{failure control}.

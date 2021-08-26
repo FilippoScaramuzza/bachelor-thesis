@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.7)  25 AUG 2021 22:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.7)  26 AUG 2021 21:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -460,7 +460,7 @@ LaTeX Info: Redefining \nameref on input line 322.
 \c@proposizione=\count319
 \c@problema=\count320
 \c@proprieta=\count321
-<images/logoUnipr.png, id=175, 830.10126pt x 751.80875pt>
+<images/logoUnipr.png, id=179, 830.10126pt x 751.80875pt>
 File: images/logoUnipr.png Graphic file (type png)
 <use images/logoUnipr.png>
 Package pdftex.def Info: images/logoUnipr.png  used on input line 344.
@@ -503,13 +503,13 @@ l.10
 
 
 ] [3]
-<images/FogCloudToThingContinuum.png, id=277, 2983.145pt x 2352.79pt>
+<images/FogCloudToThingContinuum.png, id=282, 2983.145pt x 2352.79pt>
 File: images/FogCloudToThingContinuum.png Graphic file (type png)
 <use images/FogCloudToThingContinuum.png>
 Package pdftex.def Info: images/FogCloudToThingContinuum.png  used on input line 22.
 (pdftex.def)             Requested size: 341.43306pt x 269.25479pt.
  [4 <./images/FogCloudToThingContinuum.png>] [5] [6]
-<images/smartcars_trafficcontrol.png, id=306, 1052.93375pt x 850.17625pt>
+<images/smartcars_trafficcontrol.png, id=311, 1052.93375pt x 850.17625pt>
 File: images/smartcars_trafficcontrol.png Graphic file (type png)
 <use images/smartcars_trafficcontrol.png>
 Package pdftex.def Info: images/smartcars_trafficcontrol.png  used on input line 49.
@@ -520,7 +520,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 49--51
  []
 
 [7 <./images/smartcars_trafficcontrol.png>]
-<images/smartcities_smartbuildings.png, id=317, 1063.975pt x 582.175pt>
+<images/smartcities_smartbuildings.png, id=322, 1063.975pt x 582.175pt>
 File: images/smartcities_smartbuildings.png Graphic file (type png)
 <use images/smartcities_smartbuildings.png>
 Package pdftex.def Info: images/smartcities_smartbuildings.png  used on input line 62.
@@ -537,7 +537,7 @@ Overfull \hbox (0.37672pt too wide) in paragraph at lines 103--104
 
 [12]) (./architettura.tex [13]
 Capitolo 2.
-<images/YAFS_classes.png, id=394, 1943.26pt x 1284.8pt>
+<images/YAFS_classes.png, id=399, 1943.26pt x 1284.8pt>
 File: images/YAFS_classes.png Graphic file (type png)
 <use images/YAFS_classes.png>
 Package pdftex.def Info: images/YAFS_classes.png  used on input line 13.
@@ -552,7 +552,7 @@ File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
-<images/applications_ddf.png, id=421, 2324.685pt x 654.445pt>
+<images/applications_ddf.png, id=426, 2324.685pt x 654.445pt>
 File: images/applications_ddf.png Graphic file (type png)
 <use images/applications_ddf.png>
 Package pdftex.def Info: images/applications_ddf.png  used on input line 46.
@@ -563,7 +563,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 46--48
  []
 
 [16] [17 <./images/applications_ddf.png>] [18]
-<images/architettura_scenario.png, id=481, 2400.97pt x 2894.815pt>
+<images/architettura_scenario.png, id=486, 2400.97pt x 2894.815pt>
 File: images/architettura_scenario.png Graphic file (type png)
 <use images/architettura_scenario.png>
 Package pdftex.def Info: images/architettura_scenario.png  used on input line 103.
@@ -603,7 +603,7 @@ Capitolo 3.
 [25
 
 ]
-<images/sim_flow_diagram.png, id=542, 3216.015pt x 1477.52pt>
+<images/sim_flow_diagram.png, id=547, 3216.015pt x 1477.52pt>
 File: images/sim_flow_diagram.png Graphic file (type png)
 <use images/sim_flow_diagram.png>
 Package pdftex.def Info: images/sim_flow_diagram.png  used on input line 17.
@@ -623,14 +623,14 @@ Overfull \hbox (4.04794pt too wide) in paragraph at lines 36--37
 []\OT1/cmtt/m/n/12 HUB[]GENERATION[]PROBABILITY\OT1/cmr/m/n/12 : pro-ba-bi-lit^^Ra di ge-ne-ra-zio-ne di no-di ``hub"
  []
 
-[27] [28] [29] [30]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 120.
+[27] [28] [29] [30] [31]
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 132.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 120.
- [31] [32] [33]) [34] (./risultati.tex [35]
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 132.
+ [32] [33] [34]) (./risultati.tex [35]
 Capitolo 4.
 ) [36
 
@@ -647,21 +647,21 @@ Appendice A.
 
 ] [40] [41]) [42] (/Users/filippo/Università/Tesi/Thesis/.texpadtmp/tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
-(rerunfilecheck)             Checksum: 669FE8606446492C5F65A00BE1DEF940;8576.
+(rerunfilecheck)             Checksum: D8C892818A0095316631A0683E00F0F0;8748.
  ) 
 Here is how much of TeX's memory you used:
- 14898 strings out of 478994
- 217331 string characters out of 5858185
- 868190 words of memory out of 5000000
- 31851 multiletter control sequences out of 15000+600000
+ 14900 strings out of 478994
+ 217355 string characters out of 5858185
+ 834838 words of memory out of 5000000
+ 31852 multiletter control sequences out of 15000+600000
  416363 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,11n,74p,1821b,1429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,12n,74p,1821b,1974s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /Users/filippo/Università/Tesi/Thesis/.texpadtmp/tesi.pdf (47 pages, 3040405 bytes).
+Output written on /Users/filippo/Università/Tesi/Thesis/.texpadtmp/tesi.pdf (47 pages, 3041080 bytes).
 PDF statistics:
- 865 PDF objects out of 1000 (max. 8388607)
- 762 compressed objects within 8 object streams
- 273 named destinations out of 1000 (max. 500000)
- 385 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 870 PDF objects out of 1000 (max. 8388607)
+ 767 compressed objects within 8 object streams
+ 274 named destinations out of 1000 (max. 500000)
+ 393 words of extra memory for PDF output out of 10000 (max. 10000000)
 
