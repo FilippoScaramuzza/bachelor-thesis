@@ -106,13 +106,13 @@ L'architettura di riferimento per la definizione dello scenario simulato è illu
   \label{fig:architettura_scenario}
 \end{figure}
 
-Tra i vari aspetti considerati durante la definizione della topologia di rete si è voluto enfatizzare il concetto del Fog Computing come ``architettura verticale". Dall'esempio in Figura \ref{fig:architettura_scenario} è infatti possibile evincere una struttura della rete gerarchica ed a livelli. Ogni livello è caratterizzato da diverse capacità di elaborazione, in base ai servizi offerti alla rete: un nodo a livelli più bassi offre pochi servizi, ma generalmente produce molti dati (ad esempio i dispositivi IoT), mentre un nodo a livelli più alti non genera dati \textit{propri}, ma piuttosto offre una rielaborazione dei dati ricevuti dai livelli più bassi offrendo molti servizi alla rete.
+Tra i vari aspetti considerati durante la definizione della topologia di rete si è voluto enfatizzare il concetto del Fog Computing come ``architettura verticale". Dall'esempio in Figura \ref{fig:architettura_scenario} è infatti possibile evincere una struttura della rete gerarchica ed a livelli. Ogni livello è caratterizzato da diverse capacità di elaborazione, in base ai servizi offerti alla rete: un nodo a livelli più bassi offre pochi servizi, ma generalmente produce molti dati (si pensi ad esempio ai dispositivi IoT), mentre un nodo a livelli più alti non genera dati \textit{propri}, piuttosto offre una rielaborazione dei dati ricevuti dai livelli più bassi offrendo molti servizi alla rete.
 
 Un fattore di particolare rilevanza è inoltre la \textit{raggiungibilità}. Ricordando infatti la necessità di rendere i servizi della rete disponibili anche nelle zone più remote della stessa, ovvero vicino all'\textit{edge} per ridurre al minimo la latenza, i nodi appartenenti a livelli più bassi sono più radicati nel territorio ed ognuno di essi è raggiungibile da aree via via più limitate e circoscritte. 
 
 \subsection{Architettura a livelli}
 
-Il sistema simulato nel corrente lavoro di Tesi offre degli spunti per l'implementazione del Fog Computing in scenari anche molto differenti tra loro. Infatti viene proposta una architettura a livelli molto flessibile e adattabile a diversi tipi di implementazioni, che possono avere qualsiasi estensione geografica a seconda delle diverse esigenze.
+Il sistema simulato in questo lavoro di Tesi offre degli spunti per l'implementazione del Fog Computing in scenari anche molto differenti tra loro. Infatti viene proposta una architettura a livelli molto flessibile e adattabile a diversi tipi di implementazioni, che possono avere qualsiasi estensione geografica a seconda delle diverse esigenze.
 
 \subsubsection{Livello IoT/Edge}
 
@@ -133,7 +133,7 @@ I nodi presenti in questo livello (e negli eventuali successivi Livelli Fog $LN$
 
 \subsubsection{Livello Cloud}
 
-In questo livello vengono raggruppati i servizi controllati dai produttori dei sensori e degli attuatori, nonché i servizi che richiedono risorse elevate per eseguire, ad esempio, algoritmi di Machine Learning o analisi statistiche avanzate. Nel Capitolo \ref{chapter:implementazione} verrà inoltre spiegato come il Cloud sia un tassello fondamentale per l'algoritmo di Placement, fungendo da ``riserva" per i servizi che non trovano un nodo utile per il piazzamento.
+In questo livello vengono raggruppati i servizi controllati dai produttori dei sensori e degli attuatori (si pensi ad esempio ai servizi utili a raccogliere dati rilevati o ad inviare particolari segnali di controllo agli attuatori), nonché i servizi che richiedono risorse elevate per eseguire, ad esempio, algoritmi di Machine Learning o analisi statistiche avanzate. Nel Capitolo \ref{chapter:implementazione} verrà inoltre spiegato come il Cloud sia un tassello fondamentale per l'algoritmo di Placement, fungendo da ``riserva" per i servizi che non trovano un nodo utile per il piazzamento.
 
 \subsection{Interconnessioni tra Livelli e Scambio di Messaggi}
 \label{section:interconnesione_livelli}
