@@ -1,6 +1,8 @@
 \chapter{Sviluppo ed Utilizzo}
 \label{chapter:implementazione}
 
+In questo capitolo verranno trattati i principali aspetti del sistema di simulazione realizzato. Verranno discusse le modalità di utilizzo e le analisi che si possono eseguire. Successivamente verranno trattati gli aspetti principali dello sviluppo del software.
+
 \section[Sistema Realizzato per Simulazioni ed Analisi]{Sistema Realizzato per Simulazioni ed\\ Analisi}
 \label{section:sistema_analisi}
 
@@ -93,7 +95,7 @@ In questa sezione vengono approfonditi i principali aspetti dell'implementazione
 
 Per ottenere il massimo beneficio dall'implementazione di un'architettura Fog, è necessario un efficace algoritmo di service placement. In generale questi algoritmi sono improntati a massimizzare il \textit{Quality of Service}\footnote{Con \textit{Quality of Service} si intende l'insieme dei valori che indicano la qualità del servizio offerto dalla rete, in termini di throughput, gestione degli errori, gestione dei ritardi e utilizzo della banda.} (QoS) o il bilanciamento del carico, oppure a minimizzare il consumo di energia, la latenza o il costo della comunicazione.
 
-In questo lavoro di Tesi, l'algoritmo implementato (in: \texttt{placeService.py}) è fondato su due aspetti principali: preservare la \textit{privacy} dei dati scambiati tra i servizi e far si che le applicazioni siano disponibili per gli utenti il più velocemente possibile. L'algoritmo utilizza un approccio \textit{greedy}\footnote{L'approccio \textit{greedy}, come paradigma negli algoritmi, indica la costruzione della soluzione ottima scegliendo, ad ogni iterazione, la via che offre il maggiore vantaggio in quello specifico stadio. } valutando i diversi aspetti dei servizi, come privacy (la sensibilità dei dati), risorse necessarie e \textit{deadlines} delle applicazioni. La privacy dei servizi è relativa al loro livello di piazzamento: con livelli di privacy crescenti, i servizi potranno essere piazzati solo in livelli via via più bassi, ovvero più vicini al livello IoT. La tendenza dell'algoritmo è quella di allocare le applicazioni il più vicino possibile a questo livello, così da minimizzare la latenza.
+In questo lavoro di Tesi, l'algoritmo implementato (in: \texttt{placeService.py}) è fondato su due aspetti principali: preservare la \textit{privacy} dei dati scambiati tra i servizi e far si che le applicazioni siano disponibili per gli utenti il più velocemente possibile. L'algoritmo di placement è statico e centralizzato. Questo utilizza un approccio \textit{greedy}\footnote{L'approccio \textit{greedy}, come paradigma negli algoritmi, indica la costruzione della soluzione ottima scegliendo, ad ogni iterazione, la via che offre il maggiore vantaggio in quello specifico stadio. } valutando i diversi aspetti dei servizi, come privacy (la sensibilità dei dati), risorse necessarie e \textit{deadlines} delle applicazioni. La privacy dei servizi è relativa al loro livello di piazzamento: con livelli di privacy crescenti, i servizi potranno essere piazzati solo in livelli via via più bassi, ovvero più vicini al livello IoT. La tendenza dell'algoritmo è quella di allocare le applicazioni il più vicino possibile a questo livello, così da minimizzare la latenza.
 
 Il primo passo che viene compiuto è l'ordinamento delle applicazioni secondo un ordine crescente sulla base del livello di privacy dei servizi che la compongono. In particolare viene utilizzato il seguente approccio:
 \begin{equation*}  
@@ -238,4 +240,44 @@ print("Simulation WITH failures starting...")
 s_f.run(stop_time, test_initial_deploy=False, show_progress_monitor=False)
 \end{lstlisting}
 
-Come accennato nel Capitolo \ref{chapter:architettura}, il simulatore YAFS basa le simulazioni sulla libreria SimPy, il cui vantaggio è quello di poter avviare politiche dinamiche, come appunto il \textit{failure control} dei nodi, tramite la funzione \texttt{deploy\_monitor()}. Nel Listato \ref{lst:sim_exec}, a riga 7, viene definita la distribuzione temporale con la quale viene richiamata la politica di \textit{failure control}.
+Come accennato nel Capitolo \ref{chapter:architettura}, il simulatore YAFS basa le simulazioni sulla libreria SimPy, il cui vantaggio è quello di poter avviare politiche dinamiche, come appunto il \textit{failure control} dei nodi, tramite la funzione \texttt{deploy\_monitor()}. Nel Listato \ref{lst:sim_exec}, a riga 7, viene definita la distribuzione temporale con la quale viene richiamata la politica di \textit{failure control}. 
+
+L'implementazione di quest'ultima è riportata nel Listato \ref{lst:failure_control}.
+
+
+\begin{lstlisting}[language=python, caption={Funzione di \textit{failure control}}, label={lst:failure_control}, captionpos=b]
+def failureControl(sim,filelog,ids):
+    #It controls the elimination of a node
+    global idxFControl
+    nodes = list(sim.topology.G.nodes())
+
+    if len(nodes)>1:
+        try:
+            node_to_remove = ids[idxFControl]
+            idxFControl +=1
+            
+            # Do not remove gateway 
+            for node in sim.topology.G.nodes(data=True):
+                if node[0] == node_to_remove:
+                    if node[1]["level"] <= 1:
+                        return
+                    else: 
+                        break
+
+            keys_DES,someModuleDeployed = getProcessFromThatNode(sim, node_to_remove)
+
+            filelog.write("%i,%s,%d\n"%(node_to_remove, someModuleDeployed,sim.env.now))
+
+            sim.remove_node(node_to_remove)
+            for key in keys_DES:
+                sim.stop_process(key)
+        except IndexError as ie:
+            print("Error: " + str(ie))
+
+    else:
+        sim.stop = True ## Stop the simulation if all nodes are failed
+\end{lstlisting}
+
+Ogni volta che la funzione di \textit{failure control} viene richiamata, un nodo della rete viene rimosso. Questa procedura comprende anche la rimozione del nodo dalla simulazione e l'interruzione dei processi DES ad esso collegati. Nel caso in cui non siano più disponibili nodi da rimuovere, allora la simulazione viene interrotta.
+
+

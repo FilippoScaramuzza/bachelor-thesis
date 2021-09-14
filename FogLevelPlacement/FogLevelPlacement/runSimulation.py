@@ -96,8 +96,8 @@ def failureControl(sim,filelog,ids):
             sim.remove_node(node_to_remove)
             for key in keys_DES:
                 sim.stop_process(key)
-        except IndexError:
-            None
+        except IndexError as ie:
+            print("Error: " + str(ie))
 
     else:
         sim.stop = True ## Stop the simulation if all nodes are failed

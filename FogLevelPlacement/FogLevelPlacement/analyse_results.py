@@ -148,7 +148,7 @@ ticksV = np.array(ticks)*10
 ## Unifiend length (0 at the end)
 QTYFailsCR = np.concatenate((QTYFailsCR,np.zeros(len(QTYC)-len(QTYFailsCR))))
 
-fig, ax = plt.subplots(figsize=(32.0,8.0))
+fig, ax = plt.subplots(figsize=(20.0,8.0))
 ax.plot(ticks, QTYC,color='#8c79ab',alpha=1.,linewidth=2)
 ax.plot(ticks, QTYFailsCR, color='#c48143',alpha=1.,linewidth=2)
 
