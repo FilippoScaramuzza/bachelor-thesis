@@ -17,45 +17,45 @@ Warning--empty journal in NetworkX
 Warning--empty year in NetworkX
 Warning--can't use both author and editor fields in microservices
 Warning--empty year in NISTMobileCloudComputing
-You've used 23 entries,
+You've used 24 entries,
             1791 wiz_defined-function locations,
-            624 strings with 9030 characters,
-and the built_in function-call counts, 6277 in all, are:
-= -- 529
-> -- 298
-< -- 9
-+ -- 108
-- -- 85
-* -- 430
-:= -- 956
-add.period$ -- 70
-call.type$ -- 23
-change.case$ -- 22
+            630 strings with 9338 characters,
+and the built_in function-call counts, 6646 in all, are:
+= -- 570
+> -- 309
+< -- 10
++ -- 112
+- -- 88
+* -- 445
+:= -- 1001
+add.period$ -- 74
+call.type$ -- 24
+change.case$ -- 23
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 298
-empty$ -- 597
-format.name$ -- 85
-if$ -- 1453
+cite$ -- 29
+duplicate$ -- 325
+empty$ -- 628
+format.name$ -- 88
+if$ -- 1551
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 24
-newline$ -- 118
-num.names$ -- 23
-pop$ -- 74
+int.to.str$ -- 24
+missing$ -- 25
+newline$ -- 123
+num.names$ -- 24
+pop$ -- 78
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 172
+skip$ -- 195
 stack$ -- 0
-substring$ -- 408
-swap$ -- 101
-text.length$ -- 9
+substring$ -- 422
+swap$ -- 117
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 51
-width$ -- 25
-write$ -- 252
+while$ -- 53
+width$ -- 26
+write$ -- 266
 (There were 2 error messages)

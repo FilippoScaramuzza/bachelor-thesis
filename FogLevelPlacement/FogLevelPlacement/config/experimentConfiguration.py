@@ -29,70 +29,74 @@ class ExperimentConfiguration:
         self.PRIVACY_ASSIGNEMENT = "random.randrange(0,100) <= 70"
 
         # Node Ram      
-        self.FUNC_NODE_RAM_FOG0 = "random.randrange(15, 19)"
-        self.FUNC_NODE_RAM_FOG1 = "random.randrange(17, 21)"
-        self.FUNC_NODE_RAM_FOG2 = "random.randrange(19, 23)"
-        self.FUNC_NODE_RAM_FOG3 = "random.randrange(21, 25)"
-        self.FUNC_NODE_RAM_CLOUD = "9999999"
-        # self.FUNC_NODE_RAM_FOG0 = 15
-        # self.FUNC_NODE_RAM_FOG1 = round(self.FUNC_NODE_RAM_FOG0 * 1.13)
-        # self.FUNC_NODE_RAM_FOG2 = round(self.FUNC_NODE_RAM_FOG0 * 1.13)
-        # self.FUNC_NODE_RAM_FOG3 = round(self.FUNC_NODE_RAM_FOG0 * 1.13)
-        # self.FUNC_NODE_RAM_FOG0 = str(self.FUNC_NODE_RAM_FOG0)
-        # self.FUNC_NODE_RAM_FOG1 = str(self.FUNC_NODE_RAM_FOG1)
-        # self.FUNC_NODE_RAM_FOG2 = str(self.FUNC_NODE_RAM_FOG2)
-        # self.FUNC_NODE_RAM_FOG3 = str(self.FUNC_NODE_RAM_FOG3)
+        # self.FUNC_NODE_RAM_FOG0 = "random.randrange(15, 19)"
+        # self.FUNC_NODE_RAM_FOG1 = "random.randrange(17, 21)"
+        # self.FUNC_NODE_RAM_FOG2 = "random.randrange(19, 23)"
+        # self.FUNC_NODE_RAM_FOG3 = "random.randrange(21, 25)"
         # self.FUNC_NODE_RAM_CLOUD = "9999999"
 
+        self.FUNC_NODE_RAM_FOG0 = 15
+        self.FUNC_NODE_RAM_FOG1 = round(self.FUNC_NODE_RAM_FOG0 * 1.13)
+        self.FUNC_NODE_RAM_FOG2 = round(self.FUNC_NODE_RAM_FOG0 * 1.13)
+        self.FUNC_NODE_RAM_FOG3 = round(self.FUNC_NODE_RAM_FOG0 * 1.13)
+        self.FUNC_NODE_RAM_FOG0 = str(self.FUNC_NODE_RAM_FOG0)
+        self.FUNC_NODE_RAM_FOG1 = str(self.FUNC_NODE_RAM_FOG1)
+        self.FUNC_NODE_RAM_FOG2 = str(self.FUNC_NODE_RAM_FOG2)
+        self.FUNC_NODE_RAM_FOG3 = str(self.FUNC_NODE_RAM_FOG3)
+        self.FUNC_NODE_RAM_CLOUD = "9999999"
+
         # Node speed [insts/ ms]
-        self.FUNC_NODE_IPT_FOG0 = "random.randrange(200, 700)"
-        self.FUNC_NODE_IPT_FOG1 = "random.randrange(300, 800)"
-        self.FUNC_NODE_IPT_FOG2 = "random.randrange(400, 900)"
-        self.FUNC_NODE_IPT_FOG3 = "random.randrange(500, 1000)"
-        self.FUNC_NODE_IPT_CLOUD = "9999"
-        # self.FUNC_NODE_IPT_FOG0 = "200"
-        # self.FUNC_NODE_IPT_FOG1 = "400"
-        # self.FUNC_NODE_IPT_FOG2 = "600"
-        # self.FUNC_NODE_IPT_FOG3 = "800"
+        # self.FUNC_NODE_IPT_FOG0 = "random.randrange(200, 700)"
+        # self.FUNC_NODE_IPT_FOG1 = "random.randrange(300, 800)"
+        # self.FUNC_NODE_IPT_FOG2 = "random.randrange(400, 900)"
+        # self.FUNC_NODE_IPT_FOG3 = "random.randrange(500, 1000)"
         # self.FUNC_NODE_IPT_CLOUD = "9999"
 
+        self.FUNC_NODE_IPT_FOG0 = "200"
+        self.FUNC_NODE_IPT_FOG1 = "400"
+        self.FUNC_NODE_IPT_FOG2 = "600"
+        self.FUNC_NODE_IPT_FOG3 = "800"
+        self.FUNC_NODE_IPT_CLOUD = "9999"
+
         # Propagation time
-        self.FUNC_EDGE_PR_SAME_LEVEL = "random.randrange(5, 30)"
-        self.FUNC_EDGE_PR_ADJ_LEVEL = "random.randrange(5, 10)"
-        self.FUNC_EDGE_PR_NON_ADJ_LEVEL_1 = "random.randrange(7, 12)"
-        self.FUNC_EDGE_PR_NON_ADJ_LEVEL_2 = "random.randrange(9, 15)"
-        # self.FUNC_EDGE_PR_SAME_LEVEL = "17"
-        # self.FUNC_EDGE_PR_ADJ_LEVEL = "7"
-        # self.FUNC_EDGE_PR_NON_ADJ_LEVEL_1 = "10"
-        # self.FUNC_EDGE_PR_NON_ADJ_LEVEL_2 = "13"
+        # self.FUNC_EDGE_PR_SAME_LEVEL = "random.randrange(5, 30)"
+        # self.FUNC_EDGE_PR_ADJ_LEVEL = "random.randrange(5, 10)"
+        # self.FUNC_EDGE_PR_NON_ADJ_LEVEL_1 = "random.randrange(7, 12)"
+        # self.FUNC_EDGE_PR_NON_ADJ_LEVEL_2 = "random.randrange(9, 15)"
+
+        self.FUNC_EDGE_PR_SAME_LEVEL = "17"
+        self.FUNC_EDGE_PR_ADJ_LEVEL = "7"
+        self.FUNC_EDGE_PR_NON_ADJ_LEVEL_1 = "10"
+        self.FUNC_EDGE_PR_NON_ADJ_LEVEL_2 = "13"
 
         # Edges Bandwith [Bytes/ms]
-        self.FUNC_EDGE_BW_SAME_LEVEL = "random.randrange(50000, 75000)"
-        self.FUNC_EDGE_BW_ADJ_LEVEL = "random.randrange(50000, 75000)"
-        self.FUNC_EDGE_BW_NON_ADJ_LEVEL_1 = "random.randrange(50000, 75000)"
-        self.FUNC_EDGE_BW_NON_ADJ_LEVEL_2 = "random.randrange(50000, 75000)"
-        # self.FUNC_EDGE_BW_SAME_LEVEL = "60000"
-        # self.FUNC_EDGE_BW_ADJ_LEVEL = "60000"
-        # self.FUNC_EDGE_BW_NON_ADJ_LEVEL_1 = "60000"
-        # self.FUNC_EDGE_BW_NON_ADJ_LEVEL_2 = "60000"
+        # self.FUNC_EDGE_BW_SAME_LEVEL = "random.randrange(50000, 75000)"
+        # self.FUNC_EDGE_BW_ADJ_LEVEL = "random.randrange(50000, 75000)"
+        # self.FUNC_EDGE_BW_NON_ADJ_LEVEL_1 = "random.randrange(50000, 75000)"
+        # self.FUNC_EDGE_BW_NON_ADJ_LEVEL_2 = "random.randrange(50000, 75000)"
+
+        self.FUNC_EDGE_BW_SAME_LEVEL = "60000"
+        self.FUNC_EDGE_BW_ADJ_LEVEL = "60000"
+        self.FUNC_EDGE_BW_NON_ADJ_LEVEL_1 = "60000"
+        self.FUNC_EDGE_BW_NON_ADJ_LEVEL_2 = "60000"
 
         # Apps 
         self.NUMBER_OF_APPS = 20
-        self.FUNC_APP_GENERATION = "nx.gn_graph(random.randint(2,7))"
-        #self.FUNC_APP_GENERATION = "nx.gn_graph(4)"
-        self.FUNC_APP_DEADLINES = "random.randint(1000, 150000)"#"random.randint(2600, 6600)"
-        #self.FUNC_APP_DEADLINES = "80000"#"random.randint(2600, 6600)"
-        self.FUNC_SERVICE_RESOURCES = "random.randint(1,4)"
-        #self.FUNC_SERVICE_RESOURCES = "3"
-        self.FUNC_SERVICEINSTR = "random.randint(20000,60000)"
-        #self.FUNC_SERVICEINSTR = "40000"
-        self.FUNC_SERVICEMESSAGESIZE = "random.randint(1500000,4500000)"
-        #self.FUNC_SERVICEMESSAGESIZE = "3000000"
+        #self.FUNC_APP_GENERATION = "nx.gn_graph(random.randint(2,7))"
+        self.FUNC_APP_GENERATION = "nx.gn_graph(4)"
+        #self.FUNC_APP_DEADLINES = "random.randint(1000, 150000)"#"random.randint(2600, 6600)"
+        self.FUNC_APP_DEADLINES = "80000"#"random.randint(2600, 6600)"
+        #self.FUNC_SERVICE_RESOURCES = "random.randint(1,4)"
+        self.FUNC_SERVICE_RESOURCES = "2.5"
+        #self.FUNC_SERVICEINSTR = "random.randint(20000,60000)"
+        self.FUNC_SERVICEINSTR = "40000"
+        #self.FUNC_SERVICEMESSAGESIZE = "random.randint(1500000,4500000)"
+        self.FUNC_SERVICEMESSAGESIZE = "3000000"
 
-        self.FUNC_REQUESTPROB = "random.random()/4"
-        # self.FUNC_REQUESTPROB = "0.2"
-        self.FUNC_USERREQRAT = "random.randint(200,1000)"
-        # self.FUNC_USERREQRAT = "600"
+        #self.FUNC_REQUESTPROB = "random.random()/4"
+        self.FUNC_REQUESTPROB = "0.2"
+        # self.FUNC_USERREQRAT = "random.randint(200,1000)"
+        self.FUNC_USERREQRAT = "600"
 
         # Update specific variable if needed
         if param_to_change != None:
@@ -108,7 +112,7 @@ class ExperimentConfiguration:
                 self.FUNC_NODE_RAM_FOG2 = str(self.FUNC_NODE_RAM_FOG2)
                 self.FUNC_NODE_RAM_FOG3 = str(self.FUNC_NODE_RAM_FOG3)
             if param_to_change == 'FUNC_APP_GENERATION':
-                self.FUNC_SERVICE_RESOURCES = str(12/x)
+                self.FUNC_SERVICE_RESOURCES = str(13/x)
                 print("GLOBAL NUM OF APPS: " + str(x)) 
                 print("RESOURCES PER SERVICE: " + self.FUNC_SERVICE_RESOURCES)
 
@@ -322,19 +326,19 @@ class ExperimentConfiguration:
     def networkGeneration(self):
 
         # Generation of the network topology
-        network_graph = TopologyGenerator.generate_topology(
-                                            iot_nodes=self.IOT_DEVICES_NUM,
-                                            YAFS_sim=True,
-                                            levels=self.NETWORK_LEVELS_NUM,
-                                            fog0_reduction_factor=self.REDUCTION_FACTOR_1,
-                                            edge_prob_0=self.LINK_GENERATION_PROBABILITY_FOG0,
-                                            fogi_reduction_factor=self.REDUCTION_FACTOR_2,
-                                            hub_prob=self.HUB_GENERATION_PROBABILITY,
-                                            min_conn_to_up=self.MIN_CONN_TO_UPPER_LEVELS,
-                                            max_conn_to_up=self.MAX_CONN_TO_UPPER_LEVELS,
-                                            all_to_cloud=self.ALL_TO_CLOUD)
-        nx.write_gexf(network_graph, "generated_graph.gexf")
-        #network_graph = nx.read_gexf("generated_graph.gexf", node_type=int)
+        # network_graph = TopologyGenerator.generate_topology(
+        #                                     iot_nodes=self.IOT_DEVICES_NUM,
+        #                                     YAFS_sim=True,
+        #                                     levels=self.NETWORK_LEVELS_NUM,
+        #                                     fog0_reduction_factor=self.REDUCTION_FACTOR_1,
+        #                                     edge_prob_0=self.LINK_GENERATION_PROBABILITY_FOG0,
+        #                                     fogi_reduction_factor=self.REDUCTION_FACTOR_2,
+        #                                     hub_prob=self.HUB_GENERATION_PROBABILITY,
+        #                                     min_conn_to_up=self.MIN_CONN_TO_UPPER_LEVELS,
+        #                                     max_conn_to_up=self.MAX_CONN_TO_UPPER_LEVELS,
+        #                                     all_to_cloud=self.ALL_TO_CLOUD)
+        #nx.write_gexf(network_graph, "generated_graph.gexf")
+        network_graph = nx.read_gexf("generated_graph.gexf", node_type=int)
 
         self.nodeResources = {}
         self.nodeSpeed = {}

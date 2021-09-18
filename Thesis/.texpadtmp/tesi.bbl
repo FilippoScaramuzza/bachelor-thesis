@@ -121,6 +121,14 @@ Duncan~J. Watts and Steven~H. Strogatz.
 \newblock {Collective dynamics of `small-world' networks}.
 \newblock {\em Nature}, 393(6684):440--442, Jun 1998.
 
+\bibitem{microservices_app_placement}
+Samodha Pallewatta, Vassilis Kostakos, and Rajkumar Buyya.
+\newblock Microservices-based iot application placement within heterogeneous
+  and resource constrained fog computing environments.
+\newblock In {\em Proceedings of the 12th IEEE/ACM International Conference on
+  Utility and Cloud Computing}, UCC'19, page 71–81, New York, NY, USA, 2019.
+  Association for Computing Machinery.
+
 \bibitem{FogForTrafficControl}
 Qiang Wu, Jun Shen, Binbin Yong, Jianqing Wu, Fucun Li, Jinqiang Wang, and
   Qingguo Zhou.

@@ -41,10 +41,10 @@
 \contentsline {subsubsection}{Impostazione della Simulazione}{33}{section*.27}%
 \contentsline {chapter}{\numberline {4}Risultati}{37}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Simulazioni con Variazione di Singoli Parametri}{37}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Simulazione con Variazione della Privacy}{37}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.1}Simulazione con Variazione della Distribuzione della Privacy}{37}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Simulazione con Variazione delle Risorse Richieste dai Servizi}{39}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.1.3}Simulazione con Variazione del Fattore di Riduzione dei Nodi nei Livelli Superiori}{40}{subsection.4.1.3}%
 \contentsline {subsection}{\numberline {4.1.4}Simulazione con Variazione del Numero di Connessioni dai Livelli Inferiori ai Livelli Superiori}{42}{subsection.4.1.4}%
-\contentsline {chapter}{Conclusioni}{45}{chapter*.39}%
-\contentsline {chapter}{\numberline {A}Appendice}{46}{appendix.Alph1}%
-\contentsline {chapter}{Bibliografia}{47}{appendix.Alph1}%
+\contentsline {subsection}{\numberline {4.1.5}Simulazione con Variazione del Numero di Servizi per Applicazione}{45}{subsection.4.1.5}%
+\contentsline {chapter}{Conclusioni}{46}{chapter*.40}%
+\contentsline {chapter}{Bibliografia}{47}{chapter*.40}%

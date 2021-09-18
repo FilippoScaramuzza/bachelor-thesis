@@ -14,8 +14,8 @@ file.write("[]")
 file.close()
 
 PARAM_TO_CHANGE = "FUNC_APP_GENERATION"
-VALUE_FROM = 4
-VALUE_TO = 21
+VALUE_FROM = 1
+VALUE_TO = 25
 STEP = 1
 
 for x in range(VALUE_FROM, VALUE_TO, STEP):
