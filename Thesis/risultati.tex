@@ -1,10 +1,10 @@
-\chapter{Risultati}
+\chapter{Risultati delle Simulazioni}
 
-In questo capitolo verranno presentati i principali risultati ottenuti dalle simulazioni eseguite. Ne sono state effettuate diverse, con varie configurazioni. Verranno valutati l'algoritmo di placement al variare di specifici parametri ed, eventualmente, il soddisfacimento delle richieste con e senza failure control.
+In questo capitolo vengono presentati i principali risultati ottenuti dalle simulazioni eseguite. Ne sono state effettuate diverse, con varie configurazioni. Verranno valutati l'algoritmo di placement al variare di specifici parametri ed, eventualmente, il soddisfacimento delle richieste con e senza failure control.
 
-\section{Simulazioni con Variazione di Singoli Parametri}
+\section{Simulazioni con Variazione dei Parametri}
 
-In questa sezione verranno mostrati i risultati più interessanti che sono stati ottenuti eseguendo diverse simulazioni, fissando i parametri variabili e modificando solo uno o più parametri ad ogni iterazione.
+In questa sezione vengono mostrati i risultati più interessanti che sono stati ottenuti eseguendo diverse simulazioni, fissando i parametri variabili e modificando solo uno o più parametri ad ogni iterazione.
 
 \subsection{Simulazione con Variazione della Distribuzione della Privacy}
 
@@ -44,7 +44,7 @@ In questo scenario l'algoritmo di placement è stato eseguito facendo incrementa
 \begin{figure}[!ht]
   \includegraphics[width=10cm]{images/resources_placement_success}
   \centering
-  \caption{Successo dell'algoritmo di placement al variare del parametro \texttt{FUNC\_SERVICE\_RESOURCES}.}
+  \caption{Successo dell'algoritmo di placement al variare del parametro \texttt{FUNC\_SERVICE\_RESOURCES}. Le oscillazioni del grafico sono dovute alle componenti aleatorie delle simulazioni.}
   \label{fig:resources_placement_success}
 \end{figure}
 
@@ -66,15 +66,15 @@ Il risultato dell'esecuzione consecutiva dell'algoritmo di placement è mostrato
 \begin{figure}[!ht]
   \includegraphics[width=10cm]{images/nodes_number_placement_success}
   \centering
-  \caption{Successo dell'algoritmo di placement al variare del parametro \texttt{REDUCTION\_FACTOR\_2}.}
+  \caption{Successo dell'algoritmo di placement al variare del parametro \texttt{REDUCTION\_FACTOR\_2}. Le oscillazioni del grafico sono dovute alle componenti aleatorie delle simulazioni.}
   \label{fig:nodes_number_placement_success}
 \end{figure}
 
-Ciò che si evince dal grafico è che, salvo alcune oscillazioni dovute alle componenti aleatorie delle simulazioni, la tendenza è fortemente decrescente. Infatti oltre al valore 1.5 il successo dell'algoritmo di placement cala drasticamente. 
+Ciò che si evince dal grafico è la tendenza fortemente decrescente del successo dell'algoritmo di placement. Infatti oltre al valore 1.5 il successo dell'algoritmo di placement cala drasticamente. 
 
 Per evidenziare quanto detto vengono riportati in Figura \ref{fig:reduction_factor_placement_comparison} i grafici raffiguranti la percentuale di servizi correttamente allocati per ogni livello. A destra viene mostrato il grafico ottenuto impostando il valore di \texttt{REDUCTION\_FACTOR\_2} pari a 1, a sinistra pari a 3. 
 
-Ciò che si evince è che l'algoritmo di placement, grazie alla sua natura greedy, ha allocato in entrambi i casi la percentuale maggiore di servizi nel primo livello. Nel primo caso però molti servizi sono stati allocati nei livelli superiori, con una percentuale che differisce di poche unità, mentre nel secondo caso, dato il numero molto più basso di nodi disponibili, cala conseguentemente anche il numero di servizi per livello. Va inoltre evidenziato il fatto che nel secondo caso il numero di servizi è di molto inferiore rispetto al primo. (Figura \ref{fig:nodes_number_placement_success})
+Ciò che si evince è che l'algoritmo di placement, grazie alla sua natura greedy, ha allocato in entrambi i casi la percentuale maggiore di servizi nel primo livello. Nel primo caso però molti servizi sono stati allocati nei livelli superiori, con una percentuale che differisce di poche unità, mentre nel secondo caso, dato il numero molto più basso di nodi disponibili, cala conseguentemente anche il numero di servizi per livello. Va inoltre evidenziato il fatto che nel secondo caso il numero di servizi da allocare è di molto inferiore rispetto al primo, come evidenziato in Figura \ref{fig:nodes_number_placement_success}.
 
 \begin{figure}[!ht]
   \includegraphics[width=14cm]{images/reduction_factor_placement_comparison}
@@ -119,7 +119,7 @@ Dal grafico si evince che all'aumentare del valore relativo al numero minimo di 
   \label{fig:min_conn_200_sim_1}
 \end{figure}
 
-Per valutare il \textit{fault tollerance} della rete sono state eseguite due simulazioni e le rispettive analisi, valutando il soddisfacimento delle richieste prima nello scenario con \texttt{MIN\_CONN\_TO\_UPPER\_LEVELS = 10} e \texttt{MAX\_CONN\_TO\_UPPER\_LEVELS = 20} (Figura \ref{fig:min_conn_20_sim_2}) e poi nello scenario con \texttt{MIN\_CONN\_TO\_UPPER\_LEVELS = 200} e \texttt{MAX\_CONN\_TO\_UPPER\_LEVELS = 210} (Figura \ref{fig:min_conn_200_sim_1}).
+Per valutare la \textit{fault tollerance} della rete sono state eseguite due simulazioni e le rispettive analisi, valutando il soddisfacimento delle richieste prima nello scenario con \texttt{MIN\_CONN\_TO\_UPPER\_LEVELS = 10} e \texttt{MAX\_CONN\_TO\_UPPER\_LEVELS = 20} (Figura \ref{fig:min_conn_20_sim_2}) e poi nello scenario con \texttt{MIN\_CONN\_TO\_UPPER\_LEVELS = 200} e \texttt{MAX\_CONN\_TO\_UPPER\_LEVELS = 210} (Figura \ref{fig:min_conn_200_sim_1}).
 
 
 
@@ -134,7 +134,7 @@ In questo scenario è stato eseguito l'algoritmo di placement facendo incrementa
   \label{fig:service_per_app_success}
 \end{figure}
 
-Ciò che si evince dal grafico, salvo per alcune oscillazioni dovute alle componenti aleatorie delle simulazioni, è una crescita del numero di applicazioni allocate con successo con l'aumentare del numero di servizi per applicazione. Questa appena descritta è una naturale conseguenza del fatto che è più semplice allocare servizi via via più piccoli, piuttosto che allocare applicazioni o servizi monolitici \cite{microservices_app_placement}. Questo è un risultato rilevante, vista la tendenza di applicazioni composte da un numero elevato di servizi ad essere scalabili e ben adattabili ad un sistema di Fog Computing.
+Ciò che si evince dal grafico, salvo per alcune oscillazioni dovute alle componenti aleatorie delle simulazioni e alle distribuzioni di peso dei servizi, è una crescita del numero di applicazioni allocate con successo con l'aumentare del numero di servizi per applicazione. Questa appena descritta è una naturale conseguenza del fatto che è più semplice allocare servizi via via più piccoli (microservizi), piuttosto che allocare applicazioni o servizi monolitici \cite{microservices_app_placement}. Questo è un risultato rilevante, vista la tendenza di applicazioni composte da un numero elevato di servizi ad essere scalabili e ben adattabili ad un sistema di Fog Computing.
 
 
 

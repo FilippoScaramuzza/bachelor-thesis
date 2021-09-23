@@ -1,27 +1,28 @@
 \begin{thebibliography}{10}
 
-\bibitem{NISTCloudComputing}
-P.~Mell and T.~Grance.
-\newblock The nist definition of cloud computing.
-\newblock {\em NIST Special Pubblication 800-145}, 2011.
-
 \bibitem{OpenFogReferenceArchitecture}
 OpenFog.
 \newblock {IEEE Standard for Adoption of OpenFog Reference Architecture for Fog
   Computing}.
 \newblock {\em IEEE Std 1934-2018}, pages 1--176, 2018.
 
+\bibitem{NISTCloudComputing}
+P.~Mell and T.~Grance.
+\newblock The nist definition of cloud computing.
+\newblock {\em NIST Special Pubblication 800-145}, 2011.
+
 \bibitem{FogComputingInIoT}
 Flavio Bonomi, Rodolfo Milito, Jiang Zhu, and Sateesh Addepalli.
 \newblock {Fog Computing and Its Role in the Internet of Things}.
 \newblock In {\em Proceedings of the First Edition of the MCC Workshop on
-  Mobile Cloud Computing}, MCC '12, page 13–16, New York, NY, USA, 2012.
-  Association for Computing Machinery.
+  Mobile Cloud Computing}, page 13–16, New York, NY, USA, 2012. Association
+  for Computing Machinery.
 
 \bibitem{CloudComputingBigDataIssues}
 Pedro Neves, Bradley Schmerl, Javier Cámara, and Jorge Bernardino.
 \newblock {Big Data in Cloud Computing: Features and Issues}.
-\newblock pages 307--314, 01 2016.
+\newblock In {\em International Conference on Internet of Things and Big Data},
+  pages 307--314, 01 2016.
 
 \bibitem{ThreeLevelArchitecture}
 Jie Lin, Wei Yu, Nan Zhang, Xinyu Yang, Hanlin Zhang, and Wei Zhao.

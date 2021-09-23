@@ -3,24 +3,28 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: /Users/filippo/Università/Tesi/Thesis/.texpadtmp/tesi.aux
 The style file: unsrt.bst
 Database file #1: ../riferimenti.bib
+I was expecting an "="---line 51 of file ../riferimenti.bib
+ : 
+ : location = {Helsinki, Finland},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 You're missing a field part---line 152 of file ../riferimenti.bib
  : number = 
  :          ,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 215 of file ../riferimenti.bib
+I was expecting a `,' or a `}'---line 216 of file ../riferimenti.bib
  : 
  : issn={1476-4687},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--empty booktitle in CloudComputingBigDataIssues
 Warning--empty journal in NetworkX
 Warning--empty year in NetworkX
 Warning--can't use both author and editor fields in microservices
 Warning--empty year in NISTMobileCloudComputing
 You've used 24 entries,
             1791 wiz_defined-function locations,
-            630 strings with 9338 characters,
-and the built_in function-call counts, 6646 in all, are:
+            630 strings with 9390 characters,
+and the built_in function-call counts, 6650 in all, are:
 = -- 570
 > -- 309
 < -- 10
@@ -32,30 +36,30 @@ add.period$ -- 74
 call.type$ -- 24
 change.case$ -- 23
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 325
-empty$ -- 628
+cite$ -- 28
+duplicate$ -- 326
+empty$ -- 630
 format.name$ -- 88
-if$ -- 1551
+if$ -- 1553
 int.to.chr$ -- 0
 int.to.str$ -- 24
 missing$ -- 25
 newline$ -- 123
 num.names$ -- 24
-pop$ -- 78
+pop$ -- 79
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 195
+skip$ -- 194
 stack$ -- 0
 substring$ -- 422
-swap$ -- 117
+swap$ -- 118
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 5
+warning$ -- 4
 while$ -- 53
 width$ -- 26
 write$ -- 266
-(There were 2 error messages)
+(There were 3 error messages)
