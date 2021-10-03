@@ -46,7 +46,7 @@
 \coursename{\textbf{Corso di Laurea in Ingegneria Informatica Elettronica e delle Telecomunicazioni}}
 \academicyear{ANNO ACCADEMICO 2020/2021}
 \advisorname{Chiar.mo Prof. Michele Amoretti}
-\coadvisorname{Dr. Ing. Gabriele Penzotti}
+\coadvisorname{Dott. Ing. Gabriele Penzotti}
 \studentname{Filippo Scaramuzza}
 \itathesistitle{Simulazione di Sistemi Fog N-Tier con Posizionamento Dinamico dei Servizi}
 \engthesistitle{Simulation of N-Tier Fog Systems with Dynamic Service Placement}
@@ -54,25 +54,31 @@
 \begin{document}
 	\maketitle
 
-Nell'era dei Big Data il tempo richiesto per accedere ad alcune applicazioni \textit{Cloud-based}, che concentrano l'intera elaborazione dei dati nei \textit{data-center}, potrebbe essere troppo elevato. Inoltre, l'ormai noto incremento dei dispositivi connessi in ambito Internet of Things, ed il conseguente rapido aumento dei dati generati nell'edge della rete richiedono l'implementazione del cosiddetto \textit{Cloud-to-Thing Continuum}. In questo ambito sono state avanzate numerose proposte, ad esempio il \textit{Fog Computing}, un paradigma a livello di sistema che distribuisce le funzioni di elaborazione, archiviazione, controllo e comunicazione dall'edge al Clouda. I possibili ambiti di applicazione del \textit{Fog Computing} sono innumerevoli: dagli \textit{Smart Vehicles} e il \textit{Traffic Control}, alle \textit{Smart Cities} e agli \textit{Smart Buildings}.
+Nell'era dei Big Data il tempo richiesto per accedere ad alcune applicazioni \textit{Cloud-based}, che concentrano l'intera elaborazione dei dati nei \textit{data center}, potrebbe essere troppo elevato. Inoltre, l'ormai noto incremento dei dispositivi connessi in ambito Internet of Things, ed il conseguente rapido aumento dei dati generati nell'edge della rete richiedono l'implementazione del cosiddetto \textit{Cloud-to-Thing Continuum}. In questo ambito sono state avanzate numerose proposte, ad esempio il \textit{Fog Computing}, un paradigma a livello di sistema che distribuisce le funzioni di elaborazione, archiviazione, controllo e comunicazione dall'edge al Cloud. I possibili ambiti di applicazione del \textit{Fog Computing} sono innumerevoli: dagli \textit{Smart Vehicles} al \textit{Traffic Control}, alle \textit{Smart Cities} e agli \textit{Smart Buildings}.
 
-Questo lavoro di Tesi nasce da un periodo di Internato di Laboratorio presso l'Università di Parma, il cui obiettivo è stato quello di realizzare simulazioni di sistemi Fog, con lo scopo di poter analizzare le prestazioni di questo paradigma in un'architettura \textit{N-Tier}, studiando anche l'implementazione di uno specifico algoritmo di placement dei servizi.
+Questo lavoro di Tesi nasce da un periodo di Internato di Laboratorio presso il Dipartimento di Ingegneria e Architettura dell'Università di Parma, il cui obiettivo è stato quello di realizzare simulazioni di sistemi Fog, con lo scopo di poter analizzare questo paradigma in un'architettura \textit{N-Tier}, implementando anche uno specifico algoritmo di placement dei servizi.
 
 L'architettura di riferimento ha una struttura composta da 3 macro-entità: il Cloud, il livello Fog e gli end-node/dispositivi IoT. Il livello Fog, inoltre, è ulteriormente scomposto in sotto-livelli (tier) che più sono distanti dai dispositivi, più aumentano le loro capacità computazionali.
 
-Il software realizzato si basa sul simulatore \textit{YAFS} (\textit{Yet Another Fog Simulator}), un simulatore ad eventi discreti sviluppato in Python ed a sua volta basato su \textit{SimPy}, ovvero un framework DES (\textit{Discrete Event Simulator}) basato sui processi, anch'esso sviluppato in Python.
+\begin{figure}[!ht]
+  \includegraphics[width=8cm]{images/FogCloudToThingContinuum}
+  \centering
+  \caption[Architettura OpenFog N-Tier]{Architettura OpenFog N-Tier.}
+  \label{fig:ntier_architecture}
+\end{figure}
 
-Nel \textit{Capitolo 1} vengono introdotti i principali concetti fondanti del \textit{Cloud Computing}, del \textit{Fog Computing} e degli altri principali paradigmi in quest'ambito di ricerca. Vengono poi citate possibili applicazioni del \textit{Fog Computing} e viene fatta una breve introduzione a YAFS.
+Il software realizzato si basa su \textit{YAFS} (\textit{Yet Another Fog Simulator}), un simulatore ad eventi discreti sviluppato in Python ed a sua volta basato su \textit{SimPy}, ovvero un framework DES (\textit{Discrete Event Simulator}) basato sui processi, anch'esso sviluppato in Python.
 
-Nel \textit{Capitolo 2} vengono affrontati i dettagli implementativi del simulatore YAFS, la sua struttura e la modellazione delle simulazioni. Successivamente vengono approfondite le caratteristiche degli scenari simulati in questo lavoro di Tesi.
-
-Nel \textit{Capitolo 3} vengono trattati i principali aspetti del sistema di simulazione realizzato. Vengono poi discusse le modalità di utilizzo e le analisi che si possono eseguire.
-
-Nel \textit{Capitolo 4}, vengono presentati i principali risultati ottenuti dalle simulazioni eseguite. Vengono in particolare valutati l'algoritmo di placement utilizzato al variare di specifici parametri di configurazione del sistema ed il soddisfacimento delle richieste con e senza failure control.
-
-In conclusione, vengono discussi il lavoro svolto e i possibili sviluppi futuri.
+Nel \textit{Capitolo 1} vengono introdotti i principali concetti fondanti del \textit{Cloud Computing}, del \textit{Fog Computing} e degli altri principali paradigmi in quest'ambito di ricerca. Vengono poi citate possibili applicazioni del \textit{Fog Computing} e viene fatta una breve introduzione a YAFS. Nel \textit{Capitolo 2} vengono affrontati i dettagli implementativi del simulatore YAFS, la sua struttura e la modellazione delle simulazioni. Successivamente vengono approfondite le caratteristiche degli scenari simulati in questo lavoro di Tesi. Nel \textit{Capitolo 3} vengono trattati i principali aspetti del sistema di simulazione realizzato. Vengono poi discusse le modalità di utilizzo e le analisi che si possono eseguire. Nel \textit{Capitolo 4}, vengono presentati i principali risultati ottenuti dalle simulazioni eseguite. Vengono in particolare valutati l'algoritmo di placement utilizzato al variare di specifici parametri di configurazione del sistema ed il soddisfacimento delle richieste con e senza failure control. In conclusione, vengono discussi il lavoro svolto e i possibili sviluppi futuri.
 
 Lo strumento sviluppato si è dimostrato piuttosto flessibile, permettendo la valutazione dei diversi aspetti architetturali e di configurazione dei sistemi Fog. Il Fog Computing è caratterizzato da un approccio distribuito, derivante dal bisogno di superare i limiti dell'approccio centralizzato del Cloud Computing. Infatti i nodi Fog possono essere posizionati ovunque nella rete tra gli end-node e il Cloud. Questa flessibilità apre molti interrogativi che possono essere fugati tramite software di simulazione come quello realizzato. 
+
+\begin{figure}[!ht]
+  \includegraphics[width=10cm]{images/sim_flow_diagram}
+  \centering
+  \caption{Diagramma di flusso del sistema di simulazione.}
+  \label{fig:sim_flow_diagram}
+\end{figure}
 
 Sono stati ottenuti diversi risultati rilevanti, come l'andamento del successo dell'algoritmo di placement dei servizi al variare della distribuzione della privacy, delle risorse richieste dai servizi, dell'interconnessione tra i nodi a livello Fog, del numero di questi nodi, e del numero di servizi per ogni applicazione. Questo ha permesso di chiarire quali sono i parametri che più influenzano il successo dell'algoritmo, anche valutando le prestazioni durante la simulazione di un sistema così configurato.
 

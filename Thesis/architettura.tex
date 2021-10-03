@@ -12,7 +12,7 @@ YAFS è definito principalmente da sei classi: \textit{Core}, \textit{Topology},
 \begin{figure}[!ht]
   \includegraphics[width=12cm]{images/YAFS_classes}
   \centering
-  \caption[Architettura di YAFS]{Architettura di YAFS.\cite{YAFSSimulator}}
+  \caption[Architettura di YAFS]{Architettura di YAFS. \cite{YAFSSimulator}}
   \label{fig:YAFS_classes}
 \end{figure}
 
@@ -21,7 +21,7 @@ YAFS è definito principalmente da sei classi: \textit{Core}, \textit{Topology},
 Le entità della topologia sono modellate come un insieme di \textit{nodi} (ovvero i dispositivi della rete, come dispositivi IoT, nodi fog, server e cloudlet) interconnessi da \textit{archi} (i collegamenti di rete). La modellazione della topologia, tramite un \textit{grafo} permette l'applicabilità della \textit{Complex Network Theory}. Grazie all'integrazione di \textit{NetworkX}  \cite{NetworkX}, una nota libreria scritta in Python, è possibile applicare algoritmi per eseguire misure e analisi sui grafi, come il calcolo di node degree, centrality, clustering, assortativity, communities e così via. NetworkX accetta inoltre la definizione dei grafi tramite JSON, formato (open e standard) ampiamente utilizzato per la creazione dello scenario con YAFS e permette l'esportazione dei grafi in formato GEXF, utile ad esempio per l'analisi dei grafi tramite il software \textit{Gephi} \footnote{Disponibile su: \url{https://gephi.org/}}.
 
 Gli attributi obbligatori per la definizione di un nodo sono un identificativo univoco (\textit{ID}), il numero di istruzioni eseguite dal nodo in un'unità di tempo (\textit{IPT}) e la capacità della memoria (\textit{RAM}). L'utente è libero di aggiungere attributi personalizzati, utili allo scenario specifico che si vuole studiare, come è stato fatto nel corrente lavoro di Tesi (maggiori informazioni sono al Capitolo \ref{chapter:implementazione}). Un esempio di definizione dei nodi è mostrato nel Listato \ref{lst:node-definition}. 
-\begin{lstlisting}[language=json, caption={Definizione di due nodi Fog utilizzando la rappresentazione JSON \cite{YAFSSimulator}}, captionpos=b, label={lst:node-definition}]
+\begin{lstlisting}[language=json, caption={Definizione di due nodi Fog utilizzando la rappresentazione JSON. \cite{YAFSSimulator}}, captionpos=b, label={lst:node-definition}]
 {
     "id": 120, "RAM": 1, "IPT": 530,
     "POWERmin": 574,
@@ -45,7 +45,7 @@ In YAFS le applicazioni (intese come raggruppamenti di servizi), sono strutturat
 \begin{figure}[!ht]
   \includegraphics[width=14cm]{images/applications_ddf}
   \centering
-  \caption{Tre tipologie di applicazioni realizzabili, con la loro rappresentazione tramite grafo.\cite{YAFSSimulator}}
+  \caption{Tre tipologie di applicazioni realizzabili, con la loro rappresentazione tramite grafo. \cite{YAFSSimulator}}
   \label{fig:applications_ddf}
 \end{figure}
 
@@ -56,7 +56,7 @@ In Figura \ref{fig:applications_ddf} sono mostrate tre tipologie di applicazioni
 \subsection{Politiche dinamiche}
 Le classi \textit{Selection}, \textit{Placement} e \textit{Population} sono utili per la generazione dinamica degli eventi dello scenario. In particolare la prima definisce quali nodi devono eseguire un particolare servizio, di conseguenza indirizza il \textit{workload}. La classe \textit{Placement} sceglie i servizi che devono essere allocati nei vari nodi, mentre la class \textit{Population} posiziona i generatori del workload nei nodi della rete. Queste tre classi possiedono principalmente due interfacce: una contenente l'\textit{initialization function}, che prepara l'allocazione dei moduli e del workload nei nodi della rete, e una contenente una funzione che viene invocata secondo una specifica distribuzione temporale.
 
-\begin{lstlisting}[language=python, caption={Definizione di due Population policies: una statica (\texttt{popA}) ed una dinamica (\texttt{popB}) \cite{YAFSSimulator}}, captionpos=b, label={lst:population-policy}]
+\begin{lstlisting}[language=python, caption={Definizione di due Population policies: una statica (\texttt{popA}) ed una dinamica (\texttt{popB}). \cite{YAFSSimulator}}, captionpos=b, label={lst:population-policy}]
 delayActivation = deterministicDistributionStartPoint(300, 300, name='Deterministic')
 periodActivation = deterministicDistribution(name='Deterministic', time=100)
 
@@ -75,7 +75,7 @@ Nel Listato \ref{lst:population-policy} è mostrato un esempio di definizione di
 
 Nel caso della seconda politica di \textit{Population}, viene utilizzato un modello più complesso (righe 8-11): alla riga 9 viene istanziato un oggetto Evolution (Listato \ref{lst:population-evolution}). Questo segue la distribuzione di riga 1, dunque, il processo DES creato, inizia a produrre messaggi dopo un certo intervallo di tempo secondo una specifica scadenza. Ad ogni attivazione il processo creato genera workload con le caratteristiche definite alla riga 11.
 
-\begin{lstlisting}[language=python, caption={Struttura di una classe Population \cite{YAFSSimulator}}, captionpos=b, label={lst:population-evolution}]
+\begin{lstlisting}[language=python, caption={Struttura di una classe Population. \cite{YAFSSimulator}}, captionpos=b, label={lst:population-evolution}]
 
 class Evolution(population):
 	def __init__(self, listIDEntities, **kwargs):
@@ -102,7 +102,7 @@ L'architettura di riferimento per la definizione dello scenario simulato è illu
 \begin{figure}[!ht]
   \includegraphics[width=14cm]{images/architettura_scenario}
   \centering
-  \caption{Architettura dello scenario simulato}
+  \caption{Architettura dello scenario simulato.}
   \label{fig:architettura_scenario}
 \end{figure}
 
@@ -139,7 +139,7 @@ In questo livello vengono raggruppati i servizi controllati dai produttori dei s
 \label{section:interconnesione_livelli}
 Una delle caratteristiche del Fog Computing è la flessibilità della sua implementazione. Infatti i nodi, seppur ordinati gerarchicamente, non sono necessariamente connessi con i nodi ai livelli subito successivi o precedenti, ma possono essere eventualmente connessi con qualsiasi altro livello superiore o inferiore. 
 
-Per quanto riguarda invece le interconnessioni interne ai livelli, queste seguono diverse modalità. Nel caso dei livelli IoT/Edge e Fog $L0$ generalmente non sono previste connessioni, mentre nei livelli Fog da $L1$ ad $LN$ viene utilizzato un grafo \textit{small-world}\footnote{Una rete \textit{small-world}, è un tipo di grafo in cui la maggior parte dei nodi sono uno vicino (\textit{neightbors}) dell'altro e dato un nodo, i suoi vicini sono molto probabilmente vicini tra loro, con il risultato che ogni nodo è raggiungibile dall'altro con un ridotto numero di \textit{hop}.} secondo il modello \textit{Watts-Strogatz} \cite{WattsStrogatzModel}.
+Per quanto riguarda invece le interconnessioni interne ai livelli, queste seguono diverse modalità. Nel caso dei livelli IoT/Edge e Fog $L0$ generalmente non sono previste connessioni, mentre nei livelli Fog da $L1$ ad $LN$ viene utilizzato un grafo \textit{small-world}\footnote{Una rete \textit{small-world} è un tipo di grafo in cui la maggior parte dei nodi sono uno vicino (\textit{neightbors}) dell'altro e dato un nodo, i suoi vicini sono molto probabilmente vicini tra loro, con il risultato che ogni nodo è raggiungibile dall'altro con un ridotto numero di \textit{hop}.} secondo il modello \textit{Watts-Strogatz} \cite{WattsStrogatzModel}.
 
 Il sistema simulato è un'implementazione di un'architettura basata sullo scambio di messaggi tra i servizi. Questo avviene tramite un'operazione di \textit{replay} dei messaggi che avviene secondo specifiche distribuzioni di probabilità, che diminuisce ai livelli superiori. Ad esempio un messaggio generato dal Livello IoT/Edge raggiunge il livello $L0$ con probabilità pari a $0.8$, il livello $L1$ con probabilità pari a $0.4$ e così via.
 
